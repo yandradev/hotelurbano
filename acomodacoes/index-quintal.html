@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style-quintal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quintal</title>
+</head>
+
+<body>
+    <section class="central">
+        <div class="initial">
+            <img src="./img-quintal/foto2.jpg" class="stan">
+            <div class="div-1"></div>
+            <img src="./img-quintal/foto1.jpg" class="fam">
+            <div class="title-1">
+                <p>Apartamento Quintal</p>
+            </div>
+            <hr>
+        </div>
+        <div class="desc">
+            <p> Amplos e confotáveis apartamentos que convidam ao
+            <p style="margin-right: 20%;">descanso e à contemplação.</p>
+            </p>
+            <h4>Nosso hotel possui 10 charmosos, amplos e confortáveis
+                apartamentos na categoria “Standard Quintal” que podem
+                acomodar até três pessoas. Contam com confortáveis
+                camas box de casal (1.60m x 2m) e/ou solteiro (0.80m x
+                2m). Todos oferecem um afetivo quintal privado com
+                balanço rústico, chuveirão e design de charme. Também
+                possuem telefone, frigobar, ar-condicionado split, tv a cabo,
+                banheiro com água quente, secador de cabelo e cofre
+                digital. Oferecemos wifi grátis em todas as dependências
+                do hotel.</h4>
+        </div>
+        <div class="section-1">
+            <div class="icon">
+                <img src="./img-standard/ar-condicionado.png">
+                <p>Ar condicionado Split</p>
+            </div>
+            <div class="icon">
+                <img src="./img-standard/secador-de-cabelo.png">
+                <p> Secador de cabelo</p>
+            </div>
+            <div class="icon">
+                <img src="./img-standard/frigobar.png">
+                <p> Frigobar</p>
+            </div>
+            <div class="icon">
+                <img src="./img-standard/chuveiro.png">
+                <p> Chuveiro quente</p>
+            </div>
+        </div>
+        <div class="section-2">
+            <div class="icon-1">
+                <img src="./img-standard/telefone-fixo.png">
+                <p> Telefone</p>
+            </div>
+            <div class="icon-1">
+                <img src="./img-standard/televisao.png">
+                <p> TV a cabo</p>
+            </div>
+            <div class="icon-1">
+                <img src="./img-standard/sinal-wifi.png">
+                <p> Wifi</p>
+            </div>
+            <div class="icon-1">
+                <img src="./img-standard/cofre.png">
+                <p> Cofre digital</p>
+            </div>
+        </div>
+        <div class="green"></div>
+        <div class="slider">
+        
+            <div class="slideshow-container">
+
+                
+                <div class="mySlides fade">
+
+                    <img src="./img-quintal/apartamentos5.jpg" >
+                  
+                </div>
+
+                <div class="mySlides fade">
+                 
+                    <img src="./img-quintal/apartamentos4.jpg">
+                  
+                </div>
+
+                <div class="mySlides fade">
+                    
+                    <img src="./img-quintal/apartamentos3.jpg" >
+                  
+                </div>
+                <div class="mySlides fade">
+                  
+                    <img src="./img-quintal/apartamentos2.jpg">
+                    
+                </div>
+                <div class="mySlides fade">
+                 
+                    <img src="./img-quintal/apartamentos1.jpg">
+
+                </div>
+                <div class="mySlides fade">
+                 
+                    <img src="./img-quintal/apartamentos.jpg">
+
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+       
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>

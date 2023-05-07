@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style-gastro.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gastronomia </title>
+</head>
+
+<body>
+    <section class="central">
+        <div class="initial-1">
+            <img src="./img-gastro/GASTRONOMIA-11.jpg">
+            <div class="block"></div>
+        
+            <p>Gastronomia</p>
+        </div>
+        <br>
+
+        <br>
+        <div class="initial-2">
+            <img src="./img-gastro/GASTRONOMIA-8.jpg" class="img-1">
+            <p style="margin-left: 7.5%;">A melhor </p>
+            <p style="margin-left: 5.5%;"> experiência </p>
+            <p style="margin-left: 1%;"> gastronômica da </p>
+            <p style="margin-left: 7.5%;"> sua vida!</p>
+    
+    <h4>Para a Família Urbano, a Gastronomia vai muito
+        lém da necessária expiosão de sabores. É muito
+        mas que uma fantástia apresentação dos
+        pratos, da mesa e dos ambientes. É mais que um
+        Senviço de altissima qualidade. O jeito Urbano de
+        entregar uma Gastronomia Afetiva preza pela
+        experiência. Porque é preciso encantar e ir além.
+        Não é apenas sobre um inesquecivel prato. É
+        sobre tudo o que você vivencia quando o
+        degusta. É sobre memórias que você levará para
+        sempre. É sobre uma fantástica equipe de chefs.
+        de corinha. É sobre você. Sobre nós. Sobre
+        Fortaleza.</h4>
+        </div>
+   <div class="slider-color"></div>
+   <div class="slider">
+
+    <div class="slideshow-container">
+
+
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-12.jpg">
+
+        </div>
+
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-11.jpg">
+
+        </div>
+
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-10.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-14.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-15.jpg">
+
+        </div>
+        
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-9.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-8.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-7.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-6.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-5.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-4.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-3.jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-2 .jpg">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./img-gastro/GASTRONOMIA-1.jpg">
+
+        </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</div>
+
+</section>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+</script>
+</section>
+</body>
+
+</html>

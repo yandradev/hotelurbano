@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style-parque.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Parque Aquático </title>
+</head>
+
+<body>
+    <section class="central">
+        <div class="initial-1">
+            <img src="./img-parque/PARQUE6 .jpg">
+            <div class="block"></div>
+
+            <p> Parque Aquático</p>
+        </div>
+        <br>
+
+        <br>
+        <div class="initial-2">
+            <img src="./img-parque/PARQUE2.jpg" class="img-1">
+            <p style="margin-left: 7.5%;"> Quase mil metros</p>
+            <p style="margin-left: 6.3%;"> quadrados de pura </p>
+            <p style="margin-left: 13.5%"> diversão e</p>
+            <p style="margin-left: 8.5%;"> relaxamento em </p>
+            <p style="margin-left: 8.5%;"> nossas piscinas!</p>
+         
+            <h4>Nosso parque aquático oferece quase mil metros.
+                quadrados de piscinas para adultos e crianças,
+                induindo três confortáveis hidromassagens €
+                fontes luminosas interativas que de dia divertem
+                2 criançada € à note encantam os hóspedes com
+                Suas variações cromáticas. Para quem gosta de
+                bater uma bolinha dentro dágua, uma das
+                piscinas conta com tabelas para basquete e rede
+                e vôlei.</h4>
+        </div>
+        <div class="slider-color"></div>
+        <div class="slider">
+
+            <div class="slideshow-container">
+
+
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE5.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE10.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE.jpg">
+
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE1.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE2.jpg">
+
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE3.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE4.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE6.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE7.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE8.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-parque/PARQUE9.jpg">
+
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    </section>
+</body>
+
+</html>

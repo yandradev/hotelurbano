@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style-spa.css">
+    <title> SPA urbano</title>
+</head>
+
+<body>
+    <section class="central">
+        <div class="initial-1">
+            <img src="./img-spa/1.jpeg">
+            <p> SPA Urbano</p>
+        </div>
+        <div class="initial-2">
+
+            <p> Viva momentos de
+                <br>
+                relaxamento só seus
+            </p>
+
+            <h4>
+                NOSSO SPA URBANO OFERECE UM AMBIENTE MÁGICO
+                <br>
+                ONDE O SEU BEM-ESTAR MÁXIMO É A GRANDE
+                MISSÃO.
+                <br>
+                <br>
+                MASSAGENS CORPORAIS, PODAIS, ESCALDA-PÉS
+                E MAIS
+                <br>
+                UMA SÉRIE DE PROCEDIMENTOS REALIZADOS COM
+                <br>
+                MUITA COMPETÊNCIA E SEGURANÇA.
+                A EQUIPE URBANO UTILIZA MATERIAIS DESCARTÁVEIS E
+                <br>
+                REALIZA À HIGINIEZAÇÃO TOTAL DO ESPAÇO EM CADA
+                <br>
+                TROCA DE CLIENTE, INCLUINDO ESTRUTURA FÍSICA E
+                <br>
+                ROUPAS DE CAMA.
+            </h4>
+        </div>
+        <div class="slider-color"></div>
+        <div class="slider">
+
+            <div class="slideshow-container">
+
+
+                <div class="mySlides fade">
+
+                    <img src="./img-spa/12.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-spa/11.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-spa/9.jpg">
+
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="./img-spa/8.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-spa/7-1.jpg">
+
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="./img-spa/6-1.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-spa/5-1.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-spa/4-1.jpg">
+
+                </div>
+                <div class="mySlides fade">
+                    <img src="./img-spa/1.jpeg">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    </section>
+
+</body>
+
+</html>

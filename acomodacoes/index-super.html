@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style-super.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangalô Super Luxo</title>
+</head>
+
+<body>
+    <section class="central">
+        <div class="initial">
+            <img src="./img-super/foto2.jpg" class="stan">
+            <div class="div-1"></div>
+            <img src="./img-super/foto1.jpg" class="fam">
+            <div class="title-1">
+                <p> Bangalô Super Luxo</p>
+            </div>
+            <hr>
+        </div>
+        <div class="desc">
+            <p> Cinco bangalôs prime, de frente pro mar, com muito
+                charme
+            <p>
+            <p style="margin-right: 12%;"> e uma piscina privativa para chamar de sua.
+            </p>
+            </p>
+            <h4>Nossos cinco bangalôs super luxo são as acomodações mais
+                sofisticadas do hotel. Recebem, com todo conforto, até quatro pessoas
+                e possuem primeiro andar. Todos os exclusivos detalhes da arquitetura
+                e decoração são de charme, desde as garimpadas peças do artesanato
+                pernambucano e da escada com acabamento feito à mão, a partir de
+                madeira de demolição, à roupa de cama e mobiliário. No primeiro andar,
+                oferece uma charmosa cama box casal (1.80m x 2m) com dossel. As
+                vistas são para o mar e para a incrível piscina privativa com
+                hidromassagem. No térreo, um sofá-cama acomoda mais duas pessoas
+                e um banheiro com uma potente ducha proporciona um relaxante
+                banho. Já o lavabo, decorado com muito carinho e sofisticação, agrega
+                ainda mais charme. Um segundo banheiro de apoio proporciona o
+                conforto dos hóspedes do primeiro andar. Os amenities são L’Occitane.
+                Duas smartvs de 50 polegadas garantem entretenimento no térreo e no
+                primeiro andar. Sem dúvida, uma experiência única em Fortaleza.</h4>
+        </div>
+        <div class="section-1">
+            <div class="icon">
+                <img src="./img-standard/ar-condicionado.png">
+                <p>Ar condicionado Split</p>
+            </div>
+            <div class="icon">
+                <img src="./img-standard/secador-de-cabelo.png">
+                <p> Secador de cabelo</p>
+            </div>
+            <div class="icon">
+                <img src="./img-standard/frigobar.png">
+                <p> Frigobar</p>
+            </div>
+            <div class="icon">
+                <img src="./img-standard/chuveiro.png">
+                <p> Chuveiro quente</p>
+            </div>
+        </div>
+        <div class="section-2">
+            <div class="icon-1">
+                <img src="./img-standard/telefone-fixo.png">
+                <p> Telefone</p>
+            </div>
+            <div class="icon-1">
+                <img src="./img-standard/televisao.png">
+                <p> TV a cabo</p>
+            </div>
+            <div class="icon-1">
+                <img src="./img-standard/sinal-wifi.png">
+                <p> Wifi</p>
+            </div>
+            <div class="icon-1">
+                <img src="./img-standard/cofre.png">
+                <p> Cofre digital</p>
+            </div>
+        </div>
+        <div class="green"></div>
+        <div class="slider">
+
+            <div class="slideshow-container">
+
+
+                <div class="mySlides fade">
+
+                    <img src="./img-super/bangalosuperluxo6.jpg">
+
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="./img-super/bangalosuperluxo5.jpg">
+
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="./img-super/bangalosuperluxo4.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-super/bangalosuperluxo3.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-super/bangalosuperluxo7.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-super/bangalosuperluxo.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-super/bangalosuperluxo1.jpg">
+
+                </div>
+                <div class="mySlides fade">
+
+                    <img src="./img-super/bangalosuperluxo2.jpg">
+
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>

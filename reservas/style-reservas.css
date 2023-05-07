@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@200&family=Fira+Sans+Condensed:wght@500&family=Fjalla+One&family=Montserrat:wght@100;500;600;700&family=Open+Sans:wght@300;400&family=Oswald&family=Roboto:wght@100;300;500&family=Schibsted+Grotesk:wght@500&family=Sofia+Sans+Semi+Condensed&family=Source+Sans+Pro:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e4e4e4;
+}
+
+
+.standard-container {
+    background-color: white;
+    width: 65%;
+    height: 100vh;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10%;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    border-radius: 2px;
+
+}
+
+.standard-container img {
+    padding: 20px 20px 20px;
+
+
+
+}
+
+.title-1 p {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: -29%;
+    margin-right: 13%;
+
+
+}
+
+.text-1 h4 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-align: center;
+    margin-left: 36%;
+    margin-top: 1%;
+    font-size: 15px;
+    margin-right: 1%;
+    color: grey;
+    font-weight: bold;
+
+
+}
+
+.grupo img {
+    display: block;
+    width: 60px;
+    margin-left: 35%;
+    margin-top: 1%;
+    opacity: 70%;
+
+}
+
+.grupo p {
+    display: block;
+    margin-left: 41%;
+    margin-top: -5%;
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(0.8em + 0vw);
+    width: 90px;
+}
+
+.flores img {
+    display: block;
+    width: 70px;
+    margin-left: 35%;
+    margin-top: 0.1%;
+    opacity: 70%;
+
+}
+
+.flores p {
+    display: block;
+    margin-left: 41.3%;
+    margin-top: -6%;
+    color: grey;
+    width: 90px;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(0.8em + 0vw);
+}
+
+.oferta-1 {
+    background-color: #e7fcfc;
+    width: 95%;
+    margin: 0 auto;
+    height: 30vh;
+    margin-top: 5%;
+    border-color: #4563b8;
+    border-style: dashed;
+    display: block;
+}
+
+.oferta-1 p {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bold;
+    color: rgb(81, 78, 78);
+    letter-spacing: 1px;
+    padding: 10px 15px 10px;
+    font-size: 18px;
+}
+
+.oferta-1 ul li {
+    margin-left: 4%;
+    font-size: 17px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bold;
+    color: rgb(95, 92, 92);
+
+    margin-top: 1%;
+}
+
+.valor-1 p {
+    margin-left: 31rem;
+    color: #15c276;
+    font-size: 30px;
+    margin-top: -10%;
+
+
+
+
+
+}
+
+.but-1 input[type='button'] {
+    display: block;
+    margin: 0 auto;
+    margin-top: -7.5%;
+    background-color: #4cbca4;
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    color: white;
+    margin-left: 42rem;
+
+}
+
+.valor-1 span {
+    margin-left: 60%;
+    font-size: 12px;
+    color: rgb(84, 81, 81);
+    
+}
