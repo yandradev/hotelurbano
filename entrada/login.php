@@ -14,7 +14,7 @@
             <img src="./profile/img/logourbano.png" class="logo">
         </div>
         <div class="form">
-            <form action="./insert-usuario.php" method="POST" name="login" onsubmit="return Validar()">
+            <form action="validar-usuario.php" method="POST" name="login" onsubmit="return Validar()">
                 <div class="form-head">
                     <div class="titulo">
                         <h1>Login</h1>
