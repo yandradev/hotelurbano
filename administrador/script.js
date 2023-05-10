@@ -28,10 +28,6 @@ function Validar() {
     errorValidation(password, "Preencha o campo senha.")
     password.classList.add("errorInput")
     return false;
-  } else if (password.value.length < 8) {
-    errorValidation(password, "Deve conter no mínimo 8 caracteres.")
-    password.classList.add("errorInput")
-    return false;
   } else {
     errorValidation(password, "")
     password.classList.remove("errorInput")
@@ -71,9 +67,9 @@ btnConfirm.addEventListener("click", () => {
 
   if (inputConfirmSenha.getAttribute('type') == 'password') {
     inputConfirmSenha.setAttribute('type', 'text')
-    btnConfirm.setAttribute("src", "profile/img/hide.png")
+    btnConfirm.setAttribute("src", "./img/hide.png")
   } else {
     inputConfirmSenha.setAttribute('type', 'password')
-    btnConfirm.setAttribute("src", "profile/img/eye.png")
+    btnConfirm.setAttribute("src", "./img/eye.png")
   }
 });
