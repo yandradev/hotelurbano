@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Questrial&family=Raleway:wght@200&display=swap');
+
+* {
+    padding: 0;
+    margin:0;
+    box-shadow: border-box;
+}
+
+input {
+    display: block;
+    display: block;
+    background-color: #4b64bc;
+    padding: 20px 40px 5px;
+    border-style: solid;
+    font-family: 'Questrial', sans-serif;
+    border-color: #5167ba;
+    font-size: 1rem;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white;
+}
+
+::placeholder {
+    color: white;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    left: 1%;
+    margin-top: -6%;
+    text-shadow: 0.2px 0.5px 0.2px black;
+}
+
+.update button {
+    background-color: #4cb0a6;
+    padding: 5px 80px 10px;
+    width: 55%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px 1px black;
+    border-style: none;
+    position: relative;
+    left: 20%;
+    margin-top: 1%;
+}
+
+.read button  {
+    width: 55%;
+    background-color: #e76051;
+    position: relative;
+    left: 20%;
+    margin-top: 1%;
+    padding: 5px 72px 10px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px 1px black;
+    border-style: none;
+}
+
+fieldset {
+    position: relative;
+    left: 20%;
+    padding: 15px 50px 20px;
+    width: 10%;
+    margin-top: 16%;
+
+}
+
+.container {
+    width: 700px; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+input:focus {
+    background-color:
+    #c9d3f5;
+}
+
+h2 {
+    position: absolute;
+    left: 36.5%;
+    margin-top: 5%;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(109, 105, 105);
+}
+
+section {
+    width: 100%;
+    height: 8vh;
+    background: linear-gradient(90deg, rgba(243, 108, 92, 1) 0%, rgba(72, 98, 183, 1) 47%, rgba(76, 187, 163, 1) 94%);
+    ;
+}

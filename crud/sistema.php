@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-sistema.css">
-    <title> Sistema de quartos </title>
+    <title> Administração Hotel Urbano </title>
 </head>
 
 <body>
@@ -15,61 +15,64 @@
     <div class="img-1">
         <img src="http://localhost/hotelurbano/administrador/img/logourbano.png">
     </div>
-    <div class="container">
-        <fieldset>
-            <h2> Cadastrar quarto </h2>
-
+    <h2> Cadastrar quarto </h2>
+    
+        <div class="container">
+            <fieldset>
             <form method="POST" action="create.php">
-                <label> Ocupação máxima </label>
-                <input type="text" name="ocup">
-                <label> Descrição </label>
-                <input type="text" name="desc">
-                <label> Tipo do quarto </label>
-                <input type="text" name="tipo">
-                <label> Valor </label>
-                <input type="text" name="val">
 
-                <button type="submit">Cadastrar</button>
+                <input type="text" name="ocup" class="input-1" placeholder="Ocupação máxima: ">
+              <br>
+                <input type="text" name="desc" class="input-1" placeholder=" Descrição: ">
+<br>
+                <input type="text" name="tipo" class="input-1" placeholder="Tipo do quarto:">
+<br>
+                <input type="text" name="val" class="input-1" placeholder="Valor:">
+             <br>
+                <button type="submit" class="button-cadastro" >Cadastrar</button>
             </form>
+    </fieldset>
+    <div class="options">
+        <div class="listar">
+            <a href="read.php"><button class="green-1"> Listar quartos</button></a>
 
-            <br>
-            <div class="options">
-                <div class="listar">
-                    <a href="read.php"><button> Listar quartos</button></a>
-
-                    <div class="atualizar">
-                        <a href="atualizar-quartos.php"><button>Atualizar quartos</button></a>
-                    </div>
-
-                    <div class="delete">
-                        <a href="deletar-quartos.php"><button> Deletar quarto</button></a>
-                    </div>
-                </div>
+            <div class="atualizar">
+                <a href="atualizar-quartos.php"><button class="orange-1">Atualizar quartos</button></a>
             </div>
-        </fieldset>
-        <fieldset>
-            <div class="container-1">
-                <h2> Cadastrar Administrador </h2>
-                <form method="POST" action="create-admin.php">
-                    <label> Email </label>
-                    <input type="text" name="email">
-                    <label> Senha </label>
-                    <input type="text" name="senha">
-                    <br>
-                    <button type="submit">Cadastrar</button>
-                </form>
+
+            <div class="delete">
+                <a href="deletar-quartos.php"><button class="blue-1"> Deletar quarto</button></a>
+            </div>
+        </div>
+    </div>
+  <div class="title">
+    <h2> Cadastrar Administrador </h2>
+  </div>
+        <br>
+        <div class="container-1">
+            <fieldset class="fieldset-adm">
+            <form method="POST" action="create-admin.php">
+                <input type="text" name="email" placeholder="Email:" class="input-1">
+              <br>
+                <input type="text" name="senha" class="input-1" placeholder="Senha:">
                 <br>
-                <div class="listar">
-                    <a href="read-admin.php"><button> Listar administradores</button></a>
-                </div>
-                <div class="atualizar">
-                    <a href="atualizar-admin.php"><button>Atualizar administradores</button></a>
-                </div>
-                <div class="delete">
-                    <a href="deletar-admin.php"><button> Deletar administrador</button></a>
-                </div>
-            </div>
-        </fieldset>
+                <button type="submit" class="button-cadastro">Cadastrar</button>
+            </form>
+            <br>
+    </fieldset>
+    <div class="listar">
+        <a href="read-admin.php"><button class="green-2"> Listar administradores</button></a>
+    </div>
+    <div class="atualizar">
+        <a href="atualizar-admin.php"><button class="orange-2">Atualizar administradores</button></a>
+    </div>
+    <div class="delete">
+        <a href="deletar-admin.php"><button class="blue-2"> Deletar administrador</button></a>
+    </div>
+    </div>
+<script>
+    
+</script>
 </body>
 
 </html>
