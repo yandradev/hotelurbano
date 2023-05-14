@@ -10,31 +10,37 @@
 </head>
 
 <body>
-    <!-- Opções de filtro -->
-    <label>Seu orçamento:</label>
+    <div class="filtro">
+        <h4>Filtrar</h4>
+    </div>
+    <section class="filtrar">
+
+    <label class="label-1">Seu orçamento:</label>
     <br>
     <input type="checkbox" id="budget-0-2000" value="0-2000" class="budget">
-    <label for="budget-0-2000">R$ 0,00 - R$ 2.000,00</label>
+    <label class="checkbox" for="budget-0-2000">R$ 0,00 - R$ 2.000,00</label>
     <br>
     <input type="checkbox" id="budget-2000-3500" value="2000-3500" class="budget">
-    <label for="budget-2000-3500">R$ 2.000,00 - R$ 3.500,00</label>
+    <label class="checkbox" for="budget-2000-3500">R$ 2.000,00 - R$ 3.500,00</label>
+    <br>
+    <input type="checkbox" id="budget-2000-3500" value="3500-5000" class="budget">
+    <label class="checkbox" for="budget-2000-3500">R$ 3.500,00 - R$ 5.000,00</label>
     <br><br>
 
-    <label>Cancelamento:</label>
+
+    <label class="label-2">Cancelamento:</label>
     <br>
     <input type="checkbox" id="cancellation-reembolsavel" value="reembolsavel" class="cancellation">
-    <label for="cancellation-reembolsavel">Reembolsável</label>
+    <label class="checkbox" for="cancellation-reembolsavel"> Não reembolsável</label>
     <br>
     <input type="checkbox" id="cancellation-permite-cancelamento" value="permite-cancelamento" class="cancellation">
-    <label for="cancellation-permite-cancelamento">Permite cancelamento</label>
+    <label class="checkbox" for="cancellation-permite-cancelamento">Permite cancelamento</label>
     <br><br>
 
-    <button id="btn-filtrar">Filtrar</button>
-
-
-    <!-- Resultados do filtro -->
+    <button id="btn-filtrar" class="btn-filtrar">Aplicar filtro</button>
+  </section>
     <div id="resultados">
-        <!-- Os resultados filtrados serão exibidos aqui -->
+      
     </div>
 
 

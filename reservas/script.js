@@ -24,7 +24,9 @@ function filtrar() {
       (budgetValues.length === 0 || budgetValues.includes(produtoBudget)) &&
       (cancellationValues.length === 0 || cancellationValues.includes(produtoCancellation));
     produto.style.display = isVisible ? 'block' : 'none';
+   
   });
+ 
 }
 
 // Função para exibir o prompt de comando colorido
@@ -32,6 +34,8 @@ function exibirPrompt() {
   alert('Filtrando produtos...');
   filtrar();
 }
+
+
 
 // Adicionando evento de clique ao botão de filtro
 filterButton.addEventListener('click', exibirPrompt);
