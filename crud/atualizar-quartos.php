@@ -5,27 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Atualizar quartos</title>
 </head>
 
 <body>
+    <section></section>
+  <div class="title-1">
     <h2>Atualizar quarto</h2>
+  </div>
+    <div class="container">
+        <fieldset class="fieldset">
     <form method="POST" action="update.php">
-        <label>ID do quarto:</label>
-        <input type="text" name="id">
+     
+        <input type="text" name="id" placeholder="ID do quarto:">
         <br>
-        <label>Ocupação máxima:</label>
-        <input type="text" name="ocup">
+     
+        <input type="text" name="ocup" placeholder="Ocupação máxima:">
         <br>
-        <label>Descrição:</label>
-        <input type="text" name="desc">
+       
+        <input type="text" name="desc" placeholder="Descrição:">
         <br>
-        <label>Tipo do quarto:</label>
-        <input type="text" name="tipo">
+
+        <input type="text" name="tipo" placeholder="Tipo do quarto:">
         <br>
-        <label>Valor:</label>
-        <input type="text" name="val">
+     
+        <input type="text" name="val" placeholder="Valor:">
         <br>
+    </fieldset>
         <div class="listar">
             <button type="submit">Atualizar</button>
         </div>

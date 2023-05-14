@@ -14,7 +14,7 @@ body {
 .standard-container {
     background-color: white;
     width: 65%;
-    height: 100vh;
+    height: 62rem;
     display: block;
     margin: 0 auto;
     margin-top: 10%;
@@ -25,6 +25,7 @@ body {
     border-radius: 2px;
 
 }
+
 
 .standard-container img {
     padding: 20px 20px 20px;
@@ -42,7 +43,68 @@ body {
 
 
 }
+.title-0 p {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: -29%;
+    margin-left: 9%;
 
+
+}
+
+.title-2 p {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: -29%;
+    margin-left: 20%;
+}
+
+.title-3 p {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: -29%;
+    margin-left: 17%;
+}
+
+.title-4 p {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: -30%;
+    margin-left: -5%;
+}
+
+.title-5 p {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: -30%;
+    margin-left: 3%;
+}
+
+.text-2 h4 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    margin-left: 36%;
+    margin-top: 1%;
+    font-size: 12px;
+    margin-right: 1%;
+    color: grey;
+    font-weight: bold;
+}
+
+.text-3 h4 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    margin-left: 36%;
+    margin-top: 1%;
+    font-size: 11px;
+    margin-right: 1%;
+    color: grey;
+    font-weight: bold;
+
+}
 .text-1 h4 {
     font-family: 'Fira Sans Condensed', sans-serif;
     text-align: center;
@@ -104,6 +166,37 @@ body {
     border-style: dashed;
     display: block;
 }
+.oferta-2 {
+    background-color: #e7fcfc;
+    width: 100%;
+    margin: 0 auto;
+    height: 30vh;
+    margin-top: 15%;
+    border-color: #4563b8;
+    border-style: dashed;
+    display: block;
+}
+.oferta-2 {
+    background-color: #e7fcfc;
+    width: 100%;
+    margin: 0 auto;
+    height: 30vh;
+    margin-top: 15%;
+    border-color: #4563b8;
+    border-style: dashed;
+    display: block;
+}
+
+.oferta-3 {
+    background-color: #e7fcfc;
+    width: 95%;
+    margin: 0 auto;
+    height: 30vh;
+    margin-top: 30%;
+    border-color: #4563b8;
+    border-style: dashed;
+    display: block;
+}
 
 .oferta-1 p {
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -113,8 +206,25 @@ body {
     padding: 10px 15px 10px;
     font-size: 18px;
 }
+.oferta-3 p {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bold;
+    color: rgb(81, 78, 78);
+    letter-spacing: 1px;
+    padding: 10px 15px 10px;
+    font-size: 18px;
+}
 
 .oferta-1 ul li {
+    margin-left: 4%;
+    font-size: 17px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bold;
+    color: rgb(95, 92, 92);
+
+    margin-top: 1%;
+}
+.oferta-3 ul li {
     margin-left: 4%;
     font-size: 17px;
     font-family: 'Fira Sans Condensed', sans-serif;

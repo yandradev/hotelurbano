@@ -16,6 +16,8 @@ $resultado = mysqli_query($conn, $sql);
 	<meta charset="utf-8">
 </head>
 
+
+
 <body>
 	<h2>Lista de Quartos</h2>
 	<table border="1">
@@ -32,14 +34,24 @@ $resultado = mysqli_query($conn, $sql);
 
 		while ($dados = mysqli_fetch_assoc($resultado)) {
 		?>
-			<tr>
-				<td><?php echo $dados["id_quarto"]; ?></td>
-				<td><?php echo $dados["ocupacao_maxima"] ?? ''; ?></td>
-				<td><?php echo $dados["descricao"] ?? ''; ?></td>
-				<td><?php echo $dados["tipo_quarto"] ?? ''; ?></td>
-				<td><?php echo $dados["valor"] ?? ''; ?></td>
+		<tr>
+			<td>
+				<?php echo $dados["id_quarto"]; ?>
+			</td>
+			<td>
+				<?php echo $dados["ocupacao_maxima"] ?? ''; ?>
+			</td>
+			<td>
+				<?php echo $dados["descricao"] ?? ''; ?>
+			</td>
+			<td>
+				<?php echo $dados["tipo_quarto"] ?? ''; ?>
+			</td>
+			<td>
+				<?php echo $dados["valor"] ?? ''; ?>
+			</td>
 
-			</tr>
+		</tr>
 		<?php
 		}
 		?>

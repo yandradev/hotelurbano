@@ -45,6 +45,20 @@ input {
     margin-top: 1%;
 }
 
+.listar button {
+    background-color: #4cb0a6;
+    padding: 5px 80px 10px;
+    width: 55%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px 1px black;
+    border-style: none;
+    position: relative;
+    left: 20%;
+    margin-top: 1%;
+}
+
 .read button  {
     width: 55%;
     background-color: #e76051;
@@ -93,4 +107,40 @@ section {
     height: 8vh;
     background: linear-gradient(90deg, rgba(243, 108, 92, 1) 0%, rgba(72, 98, 183, 1) 47%, rgba(76, 187, 163, 1) 94%);
     ;
+}
+
+.title-1 h2 {
+    position: absolute;
+    left: 40%;
+    margin-top: 2%;
+}
+
+.fieldset {
+    margin-top: 10%;
+}
+
+.delete button {
+    background-color: #4cb0a6;
+    padding: 5px 80px 10px;
+    width: 55%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px 1px black;
+    border-style: none;
+    position: relative;
+    left: 20%;
+    margin-top: 1%;
+}
+
+.title-2 h2 {
+    position: absolute;
+    left: 37.6%;
+   
+}
+
+.title-3 h2 {
+    position: absolute;
+    left: 41%;
+   
 }

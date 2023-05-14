@@ -11,7 +11,8 @@
 
 <body>
   <section></section>
-    <h2>Atualizar Administrador</h2>
+
+  <h2>Atualizar Administrador</h2>
    
   <div class="container">
    <fieldset>
