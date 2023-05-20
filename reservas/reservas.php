@@ -371,8 +371,9 @@
     </div>
 
 
-    <div class="produto" data-budget="2000-3500" data-cancellation="reembolsavel">
-        <section class="acomod" data-budget="2000-3500" data-cancellation="reembolsavel">
+    
+        <section class="acomod" data-budget="0-2000" data-cancellation="reembolsavel">
+            <div class="produto" data-budget="2000-3500" data-cancellation="reembolsavel">
             <div class="standard-container">
                 <img src="./img-reservas/bangaloluxo2 .jpg">
 
@@ -486,7 +487,7 @@
                     </div>
                     <div class="grupo">
                         <img src="./img-reservas/grupo.png">
-                        <p>Ocup.max: 4pessoas</p>
+                        <p>Ocup.max: 4 pessoas</p>
                     </div>
                     <div class="flores">
                         <img src="./img-reservas/flores.png">

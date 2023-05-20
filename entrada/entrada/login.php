@@ -28,14 +28,14 @@
                 <div class="inputs">
                     <div class="input-box">
                         <label for="email">Email</label>
-                        <input id="email" type="email" name="email-logado" placeholder="Digite seu E-mail">
+                        <input id="email" type="email" name="email-logado" placeholder="Digite seu E-mail" required>
                         <small></small>
                     </div>
 
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password-logado" name="password" placeholder="Digite uma senha">
+                        <input id="password" type="password-logado" name="password" placeholder="Digite uma senha" required>
                         <small></small>
                         <div class="icon-eye">
                             <img src="profile/img/eye.png" width="20px" id="eye">

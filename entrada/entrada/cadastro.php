@@ -21,7 +21,7 @@
 
         <div class="form">
 
-            <form action="insert.php" method="POST" name="cadastro" onsubmit="return Validar() " autocomplete="off"
+            <form action="insert.php" method="POST" name="cadastro" autocomplete="off"
                 id="form">
                 <div class="form-head">
                     <div class="titulo">
