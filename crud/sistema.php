@@ -27,7 +27,11 @@
 <br>
                 <input type="text" name="tipo" class="input-1" placeholder="Tipo do quarto:">
 <br>
-                <input type="text" name="val" class="input-1" placeholder="Valor:">
+                <input type="text" name="val_cafe" class="input-1" placeholder="Valor Café da Manhã:">
+             <br>
+             <input type="text" name="val_meia" class="input-1" placeholder="Valor Meia Pensão:">
+             <br>
+             <input type="text" name="val_completa"" class="input-1" placeholder="Valor Pensão Completa:">
              <br>
                 <button type="submit" class="button-cadastro" >Cadastrar</button>
             </form>
@@ -70,9 +74,7 @@
         <a href="deletar-admin.php"><button class="blue-2"> Deletar administrador</button></a>
     </div>
     </div>
-<script>
-    
-</script>
+
 </body>
 
 </html>

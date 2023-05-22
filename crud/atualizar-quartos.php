@@ -30,7 +30,11 @@
         <input type="text" name="tipo" placeholder="Tipo do quarto:">
         <br>
      
-        <input type="text" name="val" placeholder="Valor:">
+        <input type="text" name="val_cafe" placeholder="Valor Café da Manhã:">
+        <br>
+        <input type="text" name="val_meia" placeholder="Valor Meia Pensão:">
+        <br>
+        <input type="text" name="val_completa" placeholder="Valor Pensão Completa:">
         <br>
     </fieldset>
         <div class="listar">

@@ -8,7 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ocupacao_maxima = isset($_POST["ocup"]) ? $_POST["ocup"] : '';
     $descricao = isset($_POST["desc"]) ? $_POST["desc"] : '';
     $tipo_quarto = isset($_POST["tipo"]) ? $_POST["tipo"] : '';
-    $valor = isset($_POST["val"]) ? $_POST["val"] : '';
+    $valor_cafe = isset($_POST["val_cafe"]) ? $_POST["val_cafe"] : '';
+    $valor_meia = isset($_POST["val_meia"]) ? $_POST["val_meia"] : '';
+    $valor_completa = isset($_POST["val_completa"]) ? $_POST["val_completa"] : '';
 
     $sql = "UPDATE quartos SET ";
 
@@ -26,8 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $update_fields[] = "tipo_quarto = '$tipo_quarto'";
     }
 
-    if (!empty($valor)) {
-        $update_fields[] = "valor = '$valor'";
+    if (!empty($valor_cafe)) {
+        $update_fields[] = "valor_cafe = '$valor_cafe'";
+    }
+    if (!empty($valor_meia)) {
+        $update_fields[] = "valor_meia = ' $valor_meia'";
+    }
+    if (!empty($valor_completa)) {
+        $update_fields[] = "valor_completa = ' $valor_completa'";
     }
 
     $sql .= implode(", ", $update_fields);

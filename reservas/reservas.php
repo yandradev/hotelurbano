@@ -216,11 +216,7 @@
                     <p>Apartamento Quintal Piscina.</p>
                 </div>
                 <div class="text-1">
-                    <h4>Standard Quintal - Todos oferecem um afetivo quintal privado com balanço rústico, chuveirão e
-                        design
-                        de charme. Também possuem telefone, frigobar, ar condicionado split, tv a cabo, banheiro com
-                        água
-                        quente, secador de cabelo e cofre digital.</h4>
+                    <h4>Apartamento Standard Quintal Piscina - Contam com uma confortável cama box de casal (1.60m x 2m), um afetivo jardim privado com balanço rústico e vistas pra piscina, além de um pequeno quintal interno, com chuveirão. O design de charme está em toda parte, inclusive no exclusivo banheiro panorâmico para o quintal interno. Também possuem telefone, frigobar, ar condicionado split, tv a cabo, banheiro com água quente, secador de cabelo e cofre digital.</h4>
                 </div>
                 <div class="grupo">
                     <img src="./img-reservas/grupo.png">
@@ -373,7 +369,7 @@
 
     
         <section class="acomod" data-budget="0-2000" data-cancellation="reembolsavel">
-            <div class="produto" data-budget="2000-3500" data-cancellation="reembolsavel">
+            <div class="produto" data-budget="0-2000" data-cancellation="reembolsavel">
             <div class="standard-container">
                 <img src="./img-reservas/bangaloluxo2 .jpg">
 
@@ -453,103 +449,107 @@
                     <div class="but-1">
                         <input type="button" value="Escolher">
                     </div>
-
-        </section>
-        <div class="acomod" data-budget="2000-3500" data-cancellation="reembolsavel">
+              
+            </section>
+   
             <section class="acomod" data-budget="2000-3500" data-cancellation="reembolsavel">
-                <div class="standard-container">
-                    <img src="./img-reservas/bangalosuperluxo.jpg">
-
-                    <div class="title-5">
-                        <p>Bangalô Super Luxo.</p>
-                    </div>
-                    <div class="text-3">
-                        <h4>Bangalô Luxo o são as acomodações mais sofisticadas do nosso hotel. Recebem, com todo
-                            conforto, até
-                            três pessoas e possuem primeiro andar. Todos os exclusivos detalhes da arquitetura e
-                            decoração são
-                            de charme, desde as garimpadas peças do artesanato cearense e da escada com acabamento feito
-                            à mão,
-                            a partir de madeira de demolição, à roupa de cama ou mobiliário. No térreo, uma bicama
-                            acomoda, com
-                            todo conforto, duas pessoas. Um banheiro com ducha proporciona um aprazível banho. Um lavabo
-                            decorado com muito carinho e sofisticação agrega ainda mais charme. Os amenities são
-                            L’Occitane.
-                            Duas smart tvs de 50 polegadas garantem entretenimento no térreo e primeiro andar, onde uma
-                            confortável cama box casal (1.80m x 2m) com dossel dá vista para o mar azul e para a
-                            incrível
-                            piscina privativa com hidromassagem. Um banheiro de apoio (sem ducha) proporciona o conforto
-                            dos
-                            hóspedes do primeiro andar, sobretudo durante a noite. Sem dúvida, uma experiência única em
-                            Fortaleza. Área do quarto Parte interna térreo 24 m² Parte varanda térreo 21 m² parte
-                            superior
-                            interna 17 m² Parte superior varanda 18 m².</h4>
-                    </div>
-                    <div class="grupo">
-                        <img src="./img-reservas/grupo.png">
-                        <p>Ocup.max: 4 pessoas</p>
-                    </div>
-                    <div class="flores">
-                        <img src="./img-reservas/flores.png">
-                        <p>Vista para o jardim</p>
-                    </div>
-                    <div class="oferta-1">
-
-                        <p>Bangalô Super Luxo Café da Manhã</p>
-                        <ul>
-                            <li>Não reembolsável;</li>
-                            <li>Café da manhã;</li>
-                            <li>Internet Wifi.</li>
-                        </ul>
-                        <div class="valor-1">
-                            <p>R$ 2.150,00</p>
-                            <span>Impostos e tarifas não inclusos.
-                            </span>
+                <div class="produto" data-budget="2000-3500" data-cancellation="reembolsavel">
+                <div class="standard-container" data-budget="2000-3500" data-cancellation="reembolsavel">
+    
+                        <img src="./img-reservas/bangalosuperluxo.jpg">
+    
+                        <div class="title-5">
+                            <p>Bangalô Super Luxo.</p>
                         </div>
-
-                        <div class="but-1">
-                            <input type="button" value="Escolher">
+                        <div class="text-3">
+                            <h4>Bangalô Luxo o são as acomodações mais sofisticadas do nosso hotel. Recebem, com todo
+                                conforto, até
+                                três pessoas e possuem primeiro andar. Todos os exclusivos detalhes da arquitetura e
+                                decoração são
+                                de charme, desde as garimpadas peças do artesanato cearense e da escada com acabamento feito
+                                à mão,
+                                a partir de madeira de demolição, à roupa de cama ou mobiliário. No térreo, uma bicama
+                                acomoda, com
+                                todo conforto, duas pessoas. Um banheiro com ducha proporciona um aprazível banho. Um lavabo
+                                decorado com muito carinho e sofisticação agrega ainda mais charme. Os amenities são
+                                L’Occitane.
+                                Duas smart tvs de 50 polegadas garantem entretenimento no térreo e primeiro andar, onde uma
+                                confortável cama box casal (1.80m x 2m) com dossel dá vista para o mar azul e para a
+                                incrível
+                                piscina privativa com hidromassagem. Um banheiro de apoio (sem ducha) proporciona o conforto
+                                dos
+                                hóspedes do primeiro andar, sobretudo durante a noite. Sem dúvida, uma experiência única em
+                                Fortaleza. Área do quarto Parte interna térreo 24 m² Parte varanda térreo 21 m² parte
+                                superior
+                                interna 17 m² Parte superior varanda 18 m².</h4>
                         </div>
-
-                        <div class="oferta-2">
-
-                            <p> Bangalô Super Luxo Meia Pensão</p>
+                        <div class="grupo">
+                            <img src="./img-reservas/grupo.png">
+                            <p>Ocup.max: 4 pessoas</p>
+                        </div>
+                        <div class="flores">
+                            <img src="./img-reservas/flores.png">
+                            <p>Vista para o jardim</p>
+                        </div>
+                        <div class="oferta-1">
+    
+                            <p>Bangalô Super Luxo Café da Manhã</p>
                             <ul>
                                 <li>Não reembolsável;</li>
                                 <li>Café da manhã;</li>
                                 <li>Internet Wifi.</li>
                             </ul>
                             <div class="valor-1">
-                                <p>R$ 2.350,00</p>
+                                <p>R$ 2.150,00</p>
                                 <span>Impostos e tarifas não inclusos.
                                 </span>
                             </div>
-
+    
+                            <div class="but-1">
+                                <input type="button" value="Escolher">
+                            </div>
+    
+                            <div class="oferta-2">
+    
+                                <p> Bangalô Super Luxo Meia Pensão</p>
+                                <ul>
+                                    <li>Não reembolsável;</li>
+                                    <li>Café da manhã;</li>
+                                    <li>Internet Wifi.</li>
+                                </ul>
+                                <div class="valor-1">
+                                    <p>R$ 2.350,00</p>
+                                    <span>Impostos e tarifas não inclusos.
+                                    </span>
+                                </div>
+    
+                                <div class="but-1">
+                                    <input type="button" value="Escolher">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="oferta-3">
+    
+                            <p>Bangalô Super Luxo Pensão completa</p>
+                            <ul>
+                                <li>Não reembolsável;</li>
+                                <li>Café da manhã;</li>
+                                <li>Internet Wifi.</li>
+                            </ul>
+                            <div class="valor-1">
+                                <p>R$ 2.530,00</p>
+                                <span>Impostos e tarifas não inclusos.
+                                </span>
+                            </div>
+    
                             <div class="but-1">
                                 <input type="button" value="Escolher">
                             </div>
                         </div>
                     </div>
-                    <div class="oferta-3">
-
-                        <p>Bangalô Super Luxo Pensão completa</p>
-                        <ul>
-                            <li>Não reembolsável;</li>
-                            <li>Café da manhã;</li>
-                            <li>Internet Wifi.</li>
-                        </ul>
-                        <div class="valor-1">
-                            <p>R$ 2.530,00</p>
-                            <span>Impostos e tarifas não inclusos.
-                            </span>
-                        </div>
-
-                        <div class="but-1">
-                            <input type="button" value="Escolher">
-                        </div>
-                    </div>
-                </div>
-            </section>
+                  
+                  
+                </section>
 
 
 

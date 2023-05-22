@@ -22,8 +22,8 @@
             </div>
 
             <div class="nav-bar-2">
-                <li><a href="./entrada/entrada/login.php" target="_blank">|Login </a></li>
-                <li><a href="./entrada/entrada/cadastro.php" target="_blank">|Registre-se </a></li>
+                <li><a href="./entrada/login.php">|Login </a></li>
+                <li><a href="./entrada/cadastro.php">|Registre-se </a></li>
 
             </div>
         </ul>
@@ -64,7 +64,7 @@
     </a>
     </div>
     <!--mudança-->
-    
+
     </section>
     <a name="acomodacoes"></a>
     <section class="items">
@@ -264,6 +264,10 @@
 
             Av. Beira Mar, 3080 - Meireles, Fortaleza - CE, 60168-121, Brasil
             85 6011-8888 | 85 7011-9999 | reservahotelurbano@gmail.com
+          <div class = "central-adm">
+            <a href="http://localhost/hotelurbano/administrador/login.php"> Central Administrativa</a>
+          </div>
+                     
         </footer>
     </section>
     <script src="./script-homepage.js"></script>
