@@ -19,7 +19,7 @@
     
         <div class="container">
             <fieldset>
-            <form method="POST" action="create.php">
+            <form method="POST" action="create.php" enctype="multipart/form-data">
 
                 <input type="text" name="ocup" class="input-1" placeholder="Ocupação máxima: ">
               <br>
