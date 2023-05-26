@@ -193,28 +193,28 @@
             <img src="./homepage/img-homepage/standard2.jpg">
             <div class="title-5">
                 <p>Standard</p>
-                <a href="./reservas/reservar.html" target="_blank"> <button>Faça sua reserva</button></a>
+                <a href="http://localhost/hotelurbano/reservas/reservas.php/#standard"><button>Faça sua reserva</button></a>
             </div>
         </div>
         <div class="acomod-quintal">
             <img src="./homepage/img-homepage/quintal2.jpg">
             <div class="title-6">
                 <p>Quintal</p>
-                <button href="">Faça sua reserva</button>
+                <a href="http://localhost/hotelurbano/reservas/reservas.php/#quintal"><button>Faça sua reserva</button></a>
             </div>
         </div>
         <div class="acomod-quintalpisc">
             <img src="./homepage/img-homepage/quintalpisc.jpg">
             <div class="title-7">
                 <p>Quintal Piscina </p>
-                <button href="">Faça sua reserva</button>
+                <a href="http://localhost/hotelurbano/reservas/reservas.php/#pisc"><button>Faça sua reserva</button></a>
             </div>
         </div>
         <div class="acomod-quintalfam">
             <img src="./homepage/img-homepage/quintafam.jpg">
             <div class="title-8">
                 <p>Quintal família </p>
-                <button href="">Faça sua reserva</button>
+                <a href="http://localhost/hotelurbano/reservas/reservas.php/#fam"><button>Faça sua reserva</button></a>
             </div>
         </div>
 
@@ -222,7 +222,7 @@
             <img src="./homepage/img-homepage/bangaloluxo.jpg">
             <div class="title-9">
                 <p> Bangalô luxo </p>
-                <button href="">Faça sua reserva</button>
+                <a href="http://localhost/hotelurbano/reservas/reservas.php/#luxo"><button>Faça sua reserva</button></a>
             </div>
         </div>
         </div>
@@ -231,7 +231,7 @@
             <img src="./homepage/img-homepage/bangalosuper.jpg">
             <div class="title-10">
                 <p> Bangalô super luxo </p>
-                <button href="">Faça sua reserva</button>
+                <a href="http://localhost/hotelurbano/reservas/reservas.php/#super"><button>Faça sua reserva</button></a>
             </div>
         </div>
 

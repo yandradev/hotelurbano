@@ -58,7 +58,7 @@
             <form method="POST" action="create-admin.php">
                 <input type="text" name="email" placeholder="Email:" class="input-1">
               <br>
-                <input type="text" name="senha" class="input-1" placeholder="Senha:">
+                <input type="password" name="senha" class="input-1" placeholder="Senha:">
                 <br>
                 <button type="submit" class="button-cadastro">Cadastrar</button>
             </form>

@@ -1021,11 +1021,11 @@ footer {
     cursor: pointer;
 }
 
-.img-logado img {
+.user-logado img {
     position: absolute;
-    width: 17rem;
-    left: 86%;
-    margin-top: -4%;
+    width: 16rem;
+    left: 87%;
+    margin-top: -3.8%;
     opacity: 90%;
  
   

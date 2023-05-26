@@ -24,7 +24,7 @@ if (mysqli_num_rows($resultado) !== 1) {
 
 // Se tudo estiver correto, inicia a sessão e redireciona para a página de administrador
 $_SESSION['usuario'] = $email;
-header("Location: http://localhost/hotelurbano/");
+header("Location: http://localhost/hotelurbano/index-logado.php");
 
 
 mysqli_close($conn);
