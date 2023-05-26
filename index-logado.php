@@ -1,3 +1,20 @@
+<?php
+require_once 'conexao.php';
+
+
+session_start();
+if (isset($_COOKIE['id_cliente'])) {
+    $id_cliente = $_COOKIE['id_cliente'];
+    
+} else {
+    header("Location: login.php");
+  
+    exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,7 +34,7 @@
                 <li><a href="#sobrenos">|Sobre nós </a></li>
                 <li><a href="#acomodacoes">|Acomodações </a></li>
                 <li><a href="#estrutura">|Estrutura </a></li>
-                <li><a href="./reservas/reservas.php">|Reservas| </a></li>
+                <li><a href="./reservas/reservas-logado.php">|Reservas| </a></li>
 
             </div>
 

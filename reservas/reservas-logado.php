@@ -54,6 +54,16 @@
                     <img src="http://localhost/hotelurbano/reservas/img-reservas/acomod-stan.png" id="standard">
                     <?php
                     require_once 'conexao.php';
+                        
+                    session_start();
+                    if (isset($_COOKIE['id_cliente'])) {
+                        $id_cliente = $_COOKIE['id_cliente'];
+                   
+                    } else {
+                        header("Location: login.php");
+                        exit();
+                    }
+                    
                     
                   
                     $sql = "SELECT * FROM quartos WHERE id_quarto = 1";
@@ -94,7 +104,7 @@
                                 </div>
 
                                 <div class="but-1">
-                                   <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
+                                    <input type="button" value="Escolher">
                                 </div>
 
                                 <div class="oferta-2">
@@ -112,7 +122,7 @@
                                     </div>
 
                                     <div class="but-1">
-                                    <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
+                                        <input type="button" value="Escolher">
                                     </div>
                                 </div>
                             </div>
