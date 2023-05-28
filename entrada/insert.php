@@ -19,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           VALUES ('$name_completed', '$cpf', '$email', '$password', '$rua', $numero_casa, '$cidade', '$bairro', '$cep')";
 
   if (mysqli_query($conn, $sql)) {
-      echo "Dados inseridos com sucesso!";
+      echo "Perfil cadastrado :)!";
   } else {
-      echo "Erro ao inserir dados: " . mysqli_error($conn);
+      echo "Erro ao cadastrar perfil " . mysqli_error($conn);
   }
 
   mysqli_close($conn);

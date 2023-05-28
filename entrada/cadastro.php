@@ -97,7 +97,7 @@
                     </div>
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite uma senha">
+                        <input id="password" type="password" name="password" placeholder="Digite uma senha" maxlength="8">
                         <small></small>
                       
                         <div class="icon-eye">
@@ -109,7 +109,7 @@
                     <div class="input-box">
                         <label for="confirmpassword">Confirme sua senha</label>
                         <input id="confirmpassword" type="password" name="confirmpassword"
-                            placeholder="Confirme sua senha">
+                            placeholder="Confirme sua senha" maxlength="8">
                         <small></small>
                        
                         <div class="icon-eye-2">

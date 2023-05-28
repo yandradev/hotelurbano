@@ -73,7 +73,19 @@
     <div class="delete">
         <a href="deletar-admin.php"><button class="blue-2"> Deletar administrador</button></a>
     </div>
-    </div>
+</div>
+            <div class="container-0">
+                <fieldset class="fieldset-cliente">
+              <img src="./img/cliente.png">
+                <br>
+        </fieldset>
+        <div class="listar">
+            <a href="read-cliente.php"><button class="green-2"> Listar clientes</button></a>
+        </div>
+        <div class="delete">
+            <a href="deletar-cliente.php"><button class="orange-2"> Deletar cliente</button></a>
+        </div>
+        </div>
 
 </body>
 
