@@ -39,7 +39,7 @@ if (isset($_COOKIE['id_cliente'])) {
             </div>
 
             <div class="user-logado">
-              <img src="http://localhost/hotelurbano/homepage/img-homepage/Fundo%20Branco.png">
+<a href="perfil-user.html"><img src="http://localhost/hotelurbano/homepage/img-homepage/Fundo%20Branco.png"></a>
 
             </div>
         </ul>

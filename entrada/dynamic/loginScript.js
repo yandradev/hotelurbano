@@ -23,9 +23,9 @@ btnConfirm.addEventListener("click", () => {
 
   if (inputConfirmSenha.getAttribute('type') == 'password') {
     inputConfirmSenha.setAttribute('type', 'text')
-    btnConfirm.setAttribute("src", "profile/img/hide.png")
+    btnConfirm.setAttribute("src", "http://localhost/hotelurbano/entrada/profile/img/hide.png")
   } else {
     inputConfirmSenha.setAttribute('type', 'password')
-    btnConfirm.setAttribute("src", "profile/img/eye.png")
+    btnConfirm.setAttribute("src", "http://localhost/hotelurbano/entrada/profile/img/eye.png")
   }
 });

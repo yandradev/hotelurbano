@@ -15,11 +15,14 @@ $senha = $_POST['password'];
 $query = "SELECT * FROM clientes WHERE email = '$email' AND senha = '$senha'";
 $resultado = mysqli_query($conn, $query);
 
+
 if (mysqli_num_rows($resultado) !== 1) {
     $_SESSION['loginErro'] = "Email ou senha inválidos.";
+
     header("Location: login.php");
     exit();
 }
+
 
 $cliente = mysqli_fetch_assoc($resultado);
 $id_cliente = $cliente['id_cliente']; 

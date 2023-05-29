@@ -131,7 +131,7 @@
                                 </div>
 
                                 <div class="but-1">
-                                    <input type="button" value="Escolher">
+                                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                                 </div>
                             </div>
                 </div>
@@ -188,7 +188,7 @@
             </div>
 
             <div class="but-1">
-                <input type="button" value="Escolher">
+            <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
             </div>
 
             <div class="oferta-2">
@@ -206,7 +206,7 @@
                 </div>
 
                 <div class="but-1">
-                    <input type="button" value="Escolher">
+                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                 </div>
             </div>
         </div>
@@ -225,7 +225,7 @@
             </div>
 
             <div class="but-1">
-                <input type="button" value="Escolher">
+            <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
             </div>
   <?php
 }
@@ -277,7 +277,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </div>
 
                 <div class="but-1">
-                    <input type="button" value="Escolher">
+                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                 </div>
 
                 <div class="oferta-2">
@@ -295,7 +295,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                     </div>
 
                     <div class="but-1">
-                        <input type="button" value="Escolher">
+                    <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                     </div>
                 </div>
             </div>
@@ -314,7 +314,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </div>
 
                 <div class="but-1">
-                    <input type="button" value="Escolher">
+                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                 </div>
    
 
@@ -368,7 +368,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
             </div>
 
             <div class="but-1">
-                <input type="button" value="Escolher">
+            <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
             </div>
 
             <div class="oferta-2">
@@ -386,7 +386,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </div>
 
                 <div class="but-1">
-                    <input type="button" value="Escolher">
+                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                 </div>
             </div>
         </div>
@@ -405,7 +405,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
             </div>
 
             <div class="but-1">
-                <input type="button" value="Escolher">
+            <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
             </div>
         </div>
         <?php
@@ -461,7 +461,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </div>
 
                 <div class="but-1">
-                    <input type="button" value="Escolher">
+                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                 </div>
 
                 <div class="oferta-2">
@@ -479,7 +479,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                     </div>
 
                     <div class="but-1">
-                        <input type="button" value="Escolher">
+                    <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                     </div>
                 </div>
             </div>
@@ -498,7 +498,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </div>
 
                 <div class="but-1">
-                    <input type="button" value="Escolher">
+                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                 </div>
                 <?php
         }
@@ -550,7 +550,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </div>
 
                 <div class="but-1">
-                    <input type="button" value="Escolher">
+                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                 </div>
 
                 <div class="oferta-2">
@@ -568,7 +568,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                     </div>
 
                     <div class="but-1">
-                        <input type="button" value="Escolher">
+                    <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                     </div>
                 </div>
             </div>
@@ -587,7 +587,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </div>
 
                 <div class="but-1">
-                    <input type="button" value="Escolher">
+                <a href="http://localhost/hotelurbano/entrada/login.php" onclick="validar(); return false;" style="text-decoration:none"> <input type="button" value="Escolher"></a>
                 </div>
             </div>
         </div>

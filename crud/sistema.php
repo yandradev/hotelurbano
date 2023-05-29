@@ -15,7 +15,7 @@
     <div class="img-1">
         <img src="http://localhost/hotelurbano/administrador/img/logourbano.png">
     </div>
-    <h2> Cadastrar quarto </h2>
+    <h2> Cadastrar Quarto </h2>
     
         <div class="container">
             <fieldset>
