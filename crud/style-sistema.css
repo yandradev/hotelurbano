@@ -68,7 +68,7 @@ input:focus {
 
 .button-cadastro {
     background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
-    ;
+    
     border-style: none;
     padding: 8px 30px 10px;
     color: white;

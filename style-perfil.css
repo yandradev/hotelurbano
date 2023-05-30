@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Questrial&family=Raleway:wght@200&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -10,15 +12,64 @@ section {
     height: 3rem;
 }
 
-.img-central img {
-    width: 28rem;
-    position: relative;
-    left: 33%;
-    margin-top: -5%;
-  
+ img {
+    width: 27rem;
+    margin: auto;
+    display: block;
+    margin-top: -4%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0;
+    margin-top: -1%;
+
+
+}
+
+fieldset {
+    padding: 20px 20px 20px;
+    width: 40rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 input {
- border-style:groove;
+    display: block;
+    cursor:pointer;
+    border:0;
+    border-bottom: 1px solid black;
+    width: 100%;
+    outline: 0;
+    font-size: 15px;
+    padding: 3px 0px 0px;
 }
 
+input:focus {
+border-bottom: 1px solid  rgb(212, 28, 7) ;
+}
+
+
+
+p {
+    font-weight: bold;
+    text-decoration:underline;
+    font-size: 18px;
+}
+
+.button-alter button{
+    background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
+    border-style: none;
+    padding: 5px 8px 8px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px black;
+    display: block;
+    margin: auto;
+    width: 10rem;
+}
