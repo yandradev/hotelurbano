@@ -12,7 +12,7 @@ $resultado = mysqli_query($conn, $sql);
 <html>
 
 <head>
-	<title>Lista de Quartos</title>
+	<title>Lista de Clientes</title>
 	<meta charset="utf-8">
 </head>
 <style>
@@ -43,7 +43,7 @@ $resultado = mysqli_query($conn, $sql);
 		text-transform: uppercase;
 		font-family: 'DM Serif Display', serif;
 		font-weight: bold;
-		left: 36%;
+		left: 37%;
 
 	}
 

@@ -52,11 +52,11 @@ btn.addEventListener('click', () => {
 
   if (inputSenha.getAttribute('type') == 'password') {
     inputSenha.setAttribute('type', 'text')
-    btn.setAttribute("src", "profile/img/hide.png")
+    btn.setAttribute("src", "http://localhost/hotelurbano/entrada/profile/img/hide.png")
 
   } else {
     inputSenha.setAttribute('type', 'password')
-    btn.setAttribute("src", "profile/img/eye.png")
+    btn.setAttribute("src", "http://localhost/hotelurbano/entrada/profile/img/eye.png")
   }
 })
 

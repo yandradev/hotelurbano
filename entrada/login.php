@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <div class="container">
+<div class="container">
         <div class="form-image">
             <img src="./profile/img/logourbano.png" class="logo">
         </div>
         <div class="form">
-            <form action="validar-usuario.php" method="POST" name="login" onsubmit="return Validar()">
+            <form action="validar-usuario.php" method="POST" name="login">
                 <div class="form-head">
                     <div class="titulo">
                         <h1>Login</h1>
@@ -28,14 +28,14 @@
                 <div class="inputs">
                     <div class="input-box">
                         <label for="email">Email</label>
-                        <input id="email" type="email" name="email-logado" placeholder="Digite seu E-mail" required>
+                        <input id="email" type="email" name="email-logado" placeholder="Digite seu E-mail">
                         <small></small>
                     </div>
 
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password-logado" name="password" placeholder="Digite uma senha" required>
+                        <input id="password" type="password-logado" name="password" placeholder="Digite uma senha" maxlength="8">
                         <small></small>
                         <div class="icon-eye">
                             <img src="profile/img/eye.png" width="20px" id="eye">

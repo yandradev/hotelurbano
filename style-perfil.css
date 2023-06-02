@@ -57,7 +57,7 @@ border-bottom: 1px solid  rgb(212, 28, 7) ;
 p {
     font-weight: bold;
     text-decoration:underline;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .button-alter button{
@@ -69,7 +69,73 @@ p {
     font-size: 17px;
     border-radius: 20px;
     text-shadow: 1px 1px 1px black;
+    width: 10rem;
+    float: left;
+
+}
+
+.button-delete button {
+    background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
+    border-style: none;
+    padding: 5px 35px 8px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px black;
+    float: right;
+}
+
+.button-deletar button {
+    background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
+    border-style: none;
+    padding: 5px 35px 8px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px black;
+    float: right;
+}
+
+
+.deletar button {
+    background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
+    border-style: none;
+    padding: 5px 35px 8px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px black;
     display: block;
     margin: auto;
-    width: 10rem;
 }
+
+.successInput {
+   border-bottom: 1px solid rgb(7, 255, 7) !important;
+
+}
+
+
+
+small {
+   color: rgb(255, 0, 0);
+   font-weight: bold;
+   font-size: 10px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+
+}
+.errorInput {
+    border-bottom: 1px solid rgb(255, 0, 0) !important;
+
+ }
+ 
+ .icon-eye img{
+    width: 20px;
+    left: 17rem;
+    position: relative;
+    margin-top: -5%;
+ }

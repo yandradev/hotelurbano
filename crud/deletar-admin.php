@@ -23,7 +23,7 @@
         <br>
     </fieldset>
       <div class="delete">
-        <button type="submit" >Excluir</button>
+        <button type="submit">Excluir</button>
       </div>
     
         <div class="read">

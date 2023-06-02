@@ -6,13 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scined index: lastname in
 /opt/lampale=1.0">
-
-
-
-
     <link rel="stylesheet" href="./profile/css/style.css">
-
-
     <title>Cadastre-se no Hotel Urbano</title>
 </head>
 
@@ -33,7 +27,7 @@
 
                     <div class="button">
                         <h3>Já tem uma conta?</h2>
-                            <button><a href="login.php">Entrar</a></button>
+                            <button type="button"><a href="login.php">Entrar</a></button>
                     </div>
                 </div>
 
