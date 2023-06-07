@@ -1024,8 +1024,8 @@ footer {
 .user-logado img {
     position: absolute;
     width: 16rem;
-    left: 87%;
-    margin-top: -3.8%;
+    left: 88%;
+    margin-top: -6.2%;
     opacity: 90%;
  
   
@@ -1041,4 +1041,10 @@ footer {
     font-size: 20px;
     text-decoration:overline;
 
+}
+
+.sessao-link {
+position: relative;
+right: 54rem;
+margin-top: -9%;
 }

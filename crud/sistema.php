@@ -57,21 +57,22 @@
             <fieldset class="fieldset-adm">
             <form method="POST" action="create-admin.php">
                 <input type="text" name="email" placeholder="Email:" class="input-1">
-              <br>
-                <input type="password" name="senha" class="input-1" placeholder="Senha:">
                 <br>
+             <div class="input-box">
+                <input type="password" id="senha" name="senha" class="input-1" placeholder="Senha:" maxlength="8">
                 <button type="submit" class="button-cadastro">Cadastrar</button>
+           
             </form>
             <br>
     </fieldset>
     <div class="listar">
-        <a href="read-admin.php"><button class="green-2"> Listar administradores</button></a>
+        <a href="read-admin.php"><button class="green-2">Listar administradores</button></a>
     </div>
     <div class="atualizar">
         <a href="atualizar-admin.php"><button class="orange-2">Atualizar administradores</button></a>
     </div>
     <div class="delete">
-        <a href="deletar-admin.php"><button class="blue-2"> Deletar administrador</button></a>
+        <a href="deletar-admin.php"><button class="blue-2">Deletar administrador</button></a>
     </div>
 </div>
             <div class="container-0">
@@ -85,8 +86,9 @@
         <div class="delete">
             <a href="deletar-cliente.php"><button class="orange-2"> Deletar cliente</button></a>
         </div>
-        </div>
+      <script src="script.js"></script>
+    </div>
 
-</body>
+    </body>
 
 </html>

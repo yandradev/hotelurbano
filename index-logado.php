@@ -27,7 +27,21 @@ if (isset($_COOKIE['id_cliente'])) {
 </head>
 
 <body>
-    <nav class="nav-bar-0">
+    <script>
+           function encerrarSessao() {
+        
+        window.history.replaceState({}, document.title, window.location.href);
+
+      
+        setTimeout(function() {
+            window.location.href = "http://localhost/hotelurbano/";
+        }, 100);
+
+        return false;
+    }
+        
+    </script>
+<nav class="nav-bar-0">
         <ul>
 
             <div class="nav-bar-1">
@@ -35,8 +49,9 @@ if (isset($_COOKIE['id_cliente'])) {
                 <li><a href="#acomodacoes">|Acomodações </a></li>
                 <li><a href="#estrutura">|Estrutura </a></li>
                 <li><a href="./reservas/reservas-logado.php">|Reservas| </a></li>
-
-            </div>
+                <li class="sessao-link"><a href="#" onclick="encerrarSessao()">Encerrar sessão |</a></li>
+                  
+            
 
             <div class="user-logado">
 <a href="perfil-user.php"><img src="http://localhost/hotelurbano/homepage/img-homepage/Fundo%20Branco.png"></a>
