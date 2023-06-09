@@ -11,6 +11,8 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
+    overflow: scroll;
+  
  
 }
 
@@ -20,21 +22,23 @@ section {
     height: 3rem;
 }
 
-.box{
+.box {
     width: 10rem;
     height: 10rem;
-    background-color:  rgba(76, 187, 163, 1);
+    background-color: rgba(76, 187, 163, 1);
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1%;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
-}
+  }
+  
 
 img {
     width: 10rem;
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: -12%;
     padding: 10px 10px 10px ;
 }
@@ -44,7 +48,8 @@ fieldset {
     width: 30rem;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-color: rgba(0, 0, 0, 0.897);
+
+
 }
 
 input {
@@ -57,9 +62,8 @@ input {
 }
 
 .container {
-position: absolute;
-left: 33%;
-margin-top: 1%;
+    display: flex;
+    justify-content: center;
 
 }
 
@@ -90,9 +94,28 @@ select {
     border-radius: 20px;
     text-shadow: 1px 1px 1px black;
     width: 10rem;
-    position: relative;
-    left: 45%;
-    margin-top: 30%;
+    margin-top: 1rem;
+
 
 }
+
+.input-submit {
+    display: flex;
+    justify-content: center;
+}
+
+
+.input-pagamento {
+    font-weight: bold;
+    color: red;
+    font-size: 12px;
+   
+}
+
+  
+
+
+  
+
+  
 

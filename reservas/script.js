@@ -1,4 +1,28 @@
 
+function mostrarOpcoesPagamento()  {
+  var selectPagamento = document.getElementById("pagamento");
+  var divOpcoesPix = document.getElementById("opcoes-pix");
+  var selectPagamento = document.getElementById("pagamento");
+  var divOpcoesDinheiro = document.getElementById("opcoes-dinheiro");
+
+  if (selectPagamento.value === "option-1") { 
+    divOpcoesPix.style.display = "block";
+  
+   
+  } else {
+    divOpcoesPix.style.display = "none"; 
+  }
+  
+    if (selectPagamento.value === "option-2") { 
+      divOpcoesDinheiro.style.display = "block";
+    } else {
+      divOpcoesDinheiro.style.display = "none";
+    }
+  }
+
+
+
+
 const budgetCheckboxes = document.querySelectorAll('.budget');
 const cancellationCheckboxes = document.querySelectorAll('.cancellation');
 const filterButton = document.querySelector('#btn-filtrar');
@@ -36,8 +60,6 @@ function exibirPrompt() {
 }
 
 
-
-
 filterButton.addEventListener('click', exibirPrompt);
 
 
@@ -48,9 +70,51 @@ function validar() {
 }
 
 
+function validarReserva(event) {
+  event.preventDefault();
 
+  var checkInInput = document.getElementById("check-in");
+  var checkOutInput = document.getElementById("check-out");
 
+  var checkInDate = new Date(checkInInput.value);
+  var checkOutDate = new Date(checkOutInput.value);
 
+  var today = new Date();
+  today.setHours(0, 0, 0, 0); 
 
+  if (
+    checkInInput.value === "" ||
+    checkOutInput.value === "" ||
+    isNaN(checkInDate.getTime()) ||
+    isNaN(checkOutDate.getTime())
+  ) {
+    alert("Por favor, insira datas válidas de check-in e check-out no formato dd/mm/aaaa.");
+    return;
+  }
 
+  if (checkInDate < today || checkOutDate < today) {
+    alert("As datas de check-in e check-out devem ser posteriores à data atual.");
+    return;
+  }
 
+  if (checkInDate >= checkOutDate) {
+    alert("A data de check-in deve ser anterior à data de check-out.");
+    return;
+  }
+
+  alert("Reserva confirmada!");
+
+  document.getElementById("reserva-form").submit();
+}
+
+function validarQuantidadeOcupantes() {
+  var selectOcupantes = document.getElementById("ocupantes");
+  var quantidadeOcupantes = selectOcupantes.value;
+
+  if (!quantidadeOcupantes) {
+    alert("Por favor, selecione a quantidade de ocupantes.");
+    return false;
+  }
+
+  return true;
+}

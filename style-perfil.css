@@ -24,6 +24,8 @@ fieldset {
     padding: 20px 20px 20px;
     width: 40rem;
     border-radius: 20px;
+   display: block;
+   margin: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -61,7 +63,7 @@ p {
     text-shadow: 1px 1px 1px black;
     width: 10rem;
     position: relative;
-    left: 20%;
+    left: 35%;
 
 }
 

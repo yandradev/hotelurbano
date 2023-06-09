@@ -104,7 +104,7 @@
                                 </div>
 
                                 <div class="but-1">
-                                    <input type="button" value="Escolher">
+                                  <a href="http://localhost/hotelurbano/reservas/registro.php" style=" text-decoration: none;"> <input type="button" value="Escolher"></a> 
                                 </div>
 
                                 <div class="oferta-2">
