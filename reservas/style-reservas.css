@@ -160,7 +160,7 @@ body {
 
 .oferta-1 {
     background-color: #e7fcfc;
-    width: 95%;
+    width: 97%;
     margin: 0 auto;
     height: 30vh;
     margin-top: 5%;
@@ -169,16 +169,6 @@ body {
     display: block;
 }
 
-.oferta-2 {
-    background-color: #e7fcfc;
-    width: 100%;
-    margin: 0 auto;
-    height: 30vh;
-    margin-top: 15%;
-    border-color: #4563b8;
-    border-style: dashed;
-    display: block;
-}
 
 .oferta-2 {
     background-color: #e7fcfc;
@@ -193,10 +183,10 @@ body {
 
 .oferta-3 {
     background-color: #e7fcfc;
-    width: 95%;
+    width: 96%;
     margin: 0 auto;
     height: 30vh;
-    margin-top: 30%;
+    margin-top: 31%;
     border-color: #4563b8;
     border-style: dashed;
     display: block;
@@ -226,7 +216,6 @@ body {
     font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: bold;
     color: rgb(95, 92, 92);
-
     margin-top: 1%;
 }
 
@@ -236,26 +225,42 @@ body {
     font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: bold;
     color: rgb(95, 92, 92);
-
     margin-top: 1%;
 }
 
-.valor-1 p {
+.valor-1 p  {
     margin-left: 31rem;
     color: #15c276;
     font-size: 30px;
     margin-top: -10%;
 
+}
 
-
+.tarifas strong {
+    margin-left: 30rem;
+    color: rgb(95, 92, 92);
+    font-size: 10px;
+    margin-top: -0.7%;
+    position: absolute;
 
 
 }
 
+
+.tarifas b {
+    color: #15c276;
+     font-size: 15px; 
+     position: absolute; 
+     right:27rem; 
+     margin-top: -1%;
+
+}
+
+
 .but-1 input[type='button'] {
     display: block;
     margin: 0 auto;
-    margin-top: -7.5%;
+    margin-top: -5.5%;
     background-color: #4cbca4;
     width: 120px;
     height: 35px;

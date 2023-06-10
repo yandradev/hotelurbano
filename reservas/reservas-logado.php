@@ -101,32 +101,38 @@
                                 </ul>
                                 <div class="valor-1">
                                     <p>R$ <?php echo $row["valor_cafe"]; ?>,00</p>
-                                    <span>Impostos e tarifas não inclusos.
-                                    </span>
+                                </div>
+                                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
+                                
                                     <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
   </a>
+
+
 </div>
 
-</div>
-
-
+<br>
                                 <div class="oferta-2">
 
                                     <p>Standard Meia Pensão</p>
                                     <ul>
                                         <li>Permite cancelamento;</li>
-                                        <li>Café da manhã;</li>
+                                        <li>Meia pensão;</li>
                                         <li>Internet Wifi.</li>
                                     </ul>
                                     <div class="valor-1">
                                         <p>R$ <?php echo $row["valor_meia"]; ?>,00</p>
-                                        <span>Impostos e tarifas não inclusos.
-                                        </span>
+                                       
                                     </div>
                                 
-                       
+                                    <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
                                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none; ">
     <input type="button" value="Escolher">
@@ -139,15 +145,17 @@
                                 <p>Standard Pensão Completa</p>
                                 <ul>
                                     <li>Permite cancelamento;</li>
-                                    <li>Café da manhã;</li>
+                                    <li>Café pensão completa;</li>
                                     <li>Internet Wifi.</li>
                                 </ul>
                                 <div class="valor-1">
                                     <p>R$ <?php echo $row["valor_completa"]; ?>,00</p>
-                                    <span>Impostos e tarifas não inclusos.
-                                    </span>
+                                 
                                 </div>
-
+                                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
                               
                                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
@@ -203,32 +211,37 @@
             </ul>
             <div class="valor-1">
                 <p>R$  <?php echo $row["valor_cafe"]; ?>,00</p>
-                <span>Impostos e tarifas não inclusos.
-                </span>
+               
             </div>
-
+            <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
             <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
   </a>
 
 </div>
-
+<br>
             <div class="oferta-2">
 
                 <p> Apartamento Quintal Meia Pensão</p>
                 <ul>
                     <li>Permite cancelamento;</li>
-                    <li>Café da manhã;</li>
+                    <li>Meia pensão;</li>
                     <li>Internet Wifi.</li>
                 </ul>
                 <div class="valor-1">
                     <p>R$  <?php echo $row["valor_meia"]; ?>,00</p>
-                    <span>Impostos e tarifas não inclusos.
-                    </span>
+                 
                 </div>
 
-                <div class="but-1">
+                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
+                                                <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
   </a>
@@ -241,15 +254,17 @@
             <p>Apartamento Quintal Pensão Completa</p>
             <ul>
                 <li>Permite cancelamento;</li>
-                <li>Café da manhã;</li>
+                <li> Café pensão completa;</li>
                 <li>Internet Wifi.</li>
             </ul>
             <div class="valor-1">
                 <p>R$  <?php echo $row["valor_completa"]; ?>,00</p>
-                <span>Impostos e tarifas não inclusos.
-                </span>
+             
             </div>
-
+            <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
             <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
@@ -301,33 +316,37 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </ul>
                 <div class="valor-1">
                     <p>R$  <?php echo $row["valor_cafe"]; ?>,00</p>
-                    <span>Impostos e tarifas não inclusos.
-                    </span>
+                  
                 </div>
 
-               
+                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
   </a>
 
 </div>
-
+<br>
                 <div class="oferta-2">
 
                     <p> Apartamento Quintal Piscina Meia Pensão</p>
                     <ul>
                         <li>Permite cancelamento;</li>
-                        <li>Café da manhã;</li>
+                        <li>Meia pensão;</li>
                         <li>Internet Wifi.</li>
                     </ul>
                     <div class="valor-1">
                         <p>R$  <?php echo $row["valor_meia"]; ?>,00</p>
-                        <span>Impostos e tarifas não inclusos.
-                        </span>
+                       
                     </div>
 
-                  
+                    <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>                  
                     <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
@@ -341,15 +360,17 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 <p>Apartamento Quintal Piscina Pensão completa</p>
                 <ul>
                     <li>Permite cancelamento;</li>
-                    <li>Café da manhã;</li>
+                    <li>Café pensão completa;</li>
                     <li>Internet Wifi.</li>
                 </ul>
                 <div class="valor-1">
                     <p>R$  <?php echo $row["valor_completa"]; ?>,00</p>
-                    <span>Impostos e tarifas não inclusos.
-                    </span>
+                  
                 </div>
-
+                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
               
                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
@@ -404,31 +425,35 @@ echo "<p>Nenhum quarto encontrado.</p>";
             </ul>
             <div class="valor-1">
                 <p>R$  <?php echo $row["valor_cafe"]; ?>,00</p>
-                <span>Impostos e tarifas não inclusos.
-                </span>
+               
             </div>
-
+            <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
             <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
   </a>
 
 </div>
-
+<br>
             <div class="oferta-2">
 
                 <p> Apartamento Quintal Família Meia Pensão</p>
                 <ul>
                     <li>Permite cancelamento;</li>
-                    <li>Café da manhã;</li>
+                    <li>Meia pensão;</li>
                     <li>Internet Wifi.</li>
                 </ul>
                 <div class="valor-1">
                     <p>R$  <?php echo $row["valor_meia"]; ?>,00</p>
-                    <span>Impostos e tarifas não inclusos.
-                    </span>
+                   
                 </div>
-
+                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
               
                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
@@ -443,15 +468,17 @@ echo "<p>Nenhum quarto encontrado.</p>";
             <p>Apartamento Quintal Família Pensão Completa</p>
             <ul>
                 <li>Permite cancelamento;</li>
-                <li>Café da manhã;</li>
+                <li>Café pensão completa;</li>
                 <li>Internet Wifi.</li>
             </ul>
             <div class="valor-1">
                 <p>R$  <?php echo $row["valor_completa"]; ?>,00</p>
-                <span>Impostos e tarifas não inclusos.
-                </span>
+              
             </div>
-
+            <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
             <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
@@ -507,31 +534,36 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </ul>
                 <div class="valor-1">
                     <p>R$ <?php echo $row["valor_cafe"]; ?>,00</p>
-                    <span>Impostos e tarifas não inclusos.
-                    </span>
+                   
                 </div>
 
-             
+                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
   </a>
 
 </div>
+<br>
                 <div class="oferta-2">
 
                     <p> Bangalô Luxo Meia Pensão</p>
                     <ul>
                         <li>Não reembolsável;</li>
-                        <li>Café da manhã;</li>
+                        <li>Meia pensão;</li>
                         <li>Internet Wifi.</li>
                     </ul>
                     <div class="valor-1">
                         <p>R$ <?php echo $row["valor_meia"]; ?>,00</p>
-                        <span>Impostos e tarifas não inclusos.
-                        </span>
+                       
                     </div>
-
+                    <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
                     <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
@@ -545,15 +577,17 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 <p>Bangalô Luxo Pensão completa</p>
                 <ul>
                     <li>Não reembolsável;</li>
-                    <li>Café da manhã;</li>
+                    <li>Café pensão completa;</li>
                     <li>Internet Wifi.</li>
                 </ul>
                 <div class="valor-1">
                     <p>R$ <?php echo $row["valor_completa"]; ?>,00</p>
-                    <span>Impostos e tarifas não inclusos.
-                    </span>
+                   
                 </div>
-
+                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
              
                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
@@ -606,31 +640,36 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </ul>
                 <div class="valor-1">
                     <p>R$ <?php echo $row["valor_cafe"]; ?>,00</p>
-                    <span>Impostos e tarifas não inclusos.
-                    </span>
+    
                 </div>
-
+                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
   </a>
 
 </div>
-                <div class="oferta-2">
+         <br>
+<div class="oferta-2">
 
                     <p> Bangalô Super Luxo Meia Pensão</p>
                     <ul>
                         <li>Não reembolsável;</li>
-                        <li>Café da manhã;</li>
+                        <li>Meia pensão;</li>
                         <li>Internet Wifi.</li>
                     </ul>
                     <div class="valor-1">
                         <p>R$ <?php echo $row["valor_meia"]; ?>,00</p>
-                        <span>Impostos e tarifas não inclusos.
-                        </span>
+                      
                     </div>
 
-               
+                    <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
                     <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
     <input type="button" value="Escolher">
@@ -644,15 +683,17 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 <p>Bangalô Super Luxo Pensão completa</p>
                 <ul>
                     <li>Não reembolsável;</li>
-                    <li>Café da manhã;</li>
+                    <li>Café pensão completa;</li>
                     <li>Internet Wifi.</li>
                 </ul>
                 <div class="valor-1">
                     <p>R$ <?php echo $row["valor_completa"]; ?>,00</p>
-                    <span>Impostos e tarifas não inclusos.
-                    </span>
+                  
                 </div>
-
+                <div class="tarifas">
+                                    <strong>Impostos e tarifas não inclusos. </strong>
+                                    <b>/noite</b> 
+                                </div>
               
                 <div class="but-1">
   <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">

@@ -109,13 +109,17 @@ select {
     font-weight: bold;
     color: red;
     font-size: 13px;
+    
    
 }
 
-  
+.input-box-quarto input {
+    font-weight: bold; 
+    color: black; 
+ font-size: 15px; 
+}
 
-
-  
-
-  
+label {
+font-weight: bold;
+}
 
