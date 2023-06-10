@@ -84,7 +84,7 @@ select {
 }
 
 
-.input-submit button {
+.input-submit input[type=submit] {
     background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
     border-style: none;
     padding: 5px 8px 8px;
@@ -108,7 +108,7 @@ select {
 .input-pagamento {
     font-weight: bold;
     color: red;
-    font-size: 12px;
+    font-size: 13px;
    
 }
 

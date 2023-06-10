@@ -5,7 +5,7 @@ function mostrarOpcoesPagamento()  {
   var selectPagamento = document.getElementById("pagamento");
   var divOpcoesDinheiro = document.getElementById("opcoes-dinheiro");
 
-  if (selectPagamento.value === "option-1") { 
+  if (selectPagamento.value === "Pix") { 
     divOpcoesPix.style.display = "block";
   
    
@@ -13,7 +13,7 @@ function mostrarOpcoesPagamento()  {
     divOpcoesPix.style.display = "none"; 
   }
   
-    if (selectPagamento.value === "option-2") { 
+    if (selectPagamento.value === "Dinheiro físico") { 
       divOpcoesDinheiro.style.display = "block";
     } else {
       divOpcoesDinheiro.style.display = "none";
@@ -102,19 +102,30 @@ function validarReserva(event) {
     return;
   }
 
-  alert("Reserva confirmada!");
 
   document.getElementById("reserva-form").submit();
 }
 
-function validarQuantidadeOcupantes() {
-  var selectOcupantes = document.getElementById("ocupantes");
-  var quantidadeOcupantes = selectOcupantes.value;
 
-  if (!quantidadeOcupantes) {
-    alert("Por favor, selecione a quantidade de ocupantes.");
-    return false;
+
+var valorCafe = '<?php echo isset($row["valor_cafe"]) ? $row["valor_cafe"] : ""; ?>';
+var valorMeia = '<?php echo isset($row["valor_meia"]) ? $row["valor_meia"] : ""; ?>';
+var valorCompleta = '<?php echo isset($row["valor_completa"]) ? $row["valor_completa"] : ""; ?>';
+
+function redirecionarParaRegistro(opcao) {
+  var valor = '';
+
+  if (opcao === 'valor_cafe') {
+    valor = valorCafe;
+  } else if (opcao === 'valor_meia') {
+    valor = valorMeia;
+  } else if (opcao === 'valor_completa') {
+    valor = valorCompleta;
   }
 
-  return true;
+  var idQuarto = '<?php echo isset($row["id_quarto"]) ? $row["id_quarto"] : ""; ?>';
+  var url = "http://localhost/hotelurbano/reservas/registro.php?id_quarto=" + idQuarto + "&valor=" + valor;
+ 
+  window.location.href = url;
 }
+
