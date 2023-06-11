@@ -52,36 +52,50 @@
             <section class="acomod" class="produto" data-budget="0-2000" data-cancellation="permite-cancelamento">
                 <div class="standard-container">
                     <img src="http://localhost/hotelurbano/reservas/img-reservas/acomod-stan.png" id="standard">
-                    <?php
-                    require_once 'conexao.php';
-                        
-                    session_start();
-                    if (isset($_COOKIE['id_cliente'])) {
-                        $id_cliente = $_COOKIE['id_cliente'];
-                   
-                    } else {
-                        header("Location: login.php");
-                        exit();
+                    
+            <?php
+            require_once 'conexao.php';
+                                    
+            session_start();
+            if (isset($_COOKIE['id_cliente'])) {
+                $id_cliente = $_COOKIE['id_cliente'];
+            } else {
+                header("Location: http://localhost/hotelurbano/entrada/login.php");
+                exit;
+            }
+            
+            $sql = "SELECT * FROM quartos WHERE id_quarto = 1";
+            $result = $conn->query($sql);
+            
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $id_quarto = $row['id_quarto'];
+            
+                    $sql_reservas = "SELECT COUNT(*) AS total_reservas FROM reservas WHERE id_quarto = $id_quarto";
+                    $resultado_reservas = $conn->query($sql_reservas);
+                    $row_reservas = $resultado_reservas->fetch_assoc();
+                    $limite_reservas = $row['limite_reservas'] - $row_reservas['total_reservas'];
+            
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        if ($limite_reservas > 0) {
+                            $sql_update = "UPDATE quartos SET limite_reservas = limite_reservas - 1 WHERE id_quarto = $id_quarto";
+                            $conn->query($sql_update);
+                            $limite_reservas--; 
+                        } else {
+                            echo "Limite de reservas atingido para este quarto.";
+                        }
                     }
-                    
-                    
-                  
-                    $sql = "SELECT * FROM quartos WHERE id_quarto = 1";
-
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                          
-                   
-                  ?>
-
-
+                
+            ?>
+            
                             <div class="title-1">
                                 <p><?php echo $row["tipo_quarto"]; ?>.</p>
                             </div>
                             <div class="text-1">
                                 <h4> <?php echo $row["descricao"]; ?></h4>
+                            </div>
+                            <div class="quartos-ocupados">
+                                <p>*Acomodações disponíveis: <?php echo $limite_reservas; ?></p>
                             </div>
                             <div class="grupo">
                                 <img src="http://localhost/hotelurbano/reservas/img-reservas/grupo.png">
@@ -107,16 +121,20 @@
                                     <b>/noite</b> 
                                 </div>
                                 
-                                    <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
-
+</a>
 </div>
-
-<br>
-                                <div class="oferta-2">
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
+     
+<div class="oferta-2">
 
                                     <p>Standard Meia Pensão</p>
                                     <ul>
@@ -133,13 +151,20 @@
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-                                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none; ">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-                                </div>                             
+</a>
 </div>
-                            </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>                             
+</div>                   
+</div>
                             <div class="oferta-3">
 
                                 <p>Standard Pensão Completa</p>
@@ -157,42 +182,68 @@
                                     <b>/noite</b> 
                                 </div>
                               
-                                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
                             </div>
                 </div>
         </div>
     </div>
     </div>
     <?php
-                        }
-                    } else {
-                        echo "<p>Nenhum quarto encontrado.</p>";
-                    }
-
-                   
+}
+} else {
+    echo "<p>Nenhum quarto encontrado.</p>";
+}
 ?>
+
 </section>
 <section class="produto" data-budget="0-2000" data-cancellation="permite-cancelamento">
     <div class="standard-container">
         <img src="http://localhost/hotelurbano/reservas/img-reservas/apartamentos-quintal.jpg" id="quintal">
         <?php
-                    $sql = "SELECT * FROM quartos WHERE id_quarto = 2";
-
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
+                   $sql = "SELECT * FROM quartos WHERE id_quarto = 2";
+                   $result = $conn->query($sql);
+                   
+                   if ($result->num_rows > 0) {
+                       while ($row = $result->fetch_assoc()) {
+                           $id_quarto = $row['id_quarto'];
+                   
+                           $sql_reservas = "SELECT COUNT(*) AS total_reservas FROM reservas WHERE id_quarto = $id_quarto";
+                           $resultado_reservas = $conn->query($sql_reservas);
+                           $row_reservas = $resultado_reservas->fetch_assoc();
+                           $limite_reservas = $row['limite_reservas'] - $row_reservas['total_reservas'];
+                   
+                           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                               if ($limite_reservas > 0) {
+                                   $sql_update = "UPDATE quartos SET limite_reservas = limite_reservas - 1 WHERE id_quarto = $id_quarto";
+                                   $conn->query($sql_update);
+                                   $limite_reservas--; 
+                               } else {
+                                   echo "Limite de reservas atingido para este quarto.";
+                               }
+                           }
+                       
+                   ?>
+                   
         <div class="title-0">
             <p><?php echo $row["tipo_quarto"]; ?>.</p>
         </div>
         <div class="text-1">
             <h4> <?php echo $row["descricao"]; ?></h4>
         </div>
+        <div class="quartos-ocupados">
+                                <p>*Acomodações disponíveis: <?php echo $limite_reservas; ?></p>
+                            </div>
         <div class="grupo">
             <img src="http://localhost/hotelurbano/reservas/img-reservas/grupo.png">
             <p>Ocup.max:  <?php echo $row["ocupacao_maxima"]; ?> pessoas</p>
@@ -217,13 +268,18 @@
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-            <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
-<br>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
             <div class="oferta-2">
 
                 <p> Apartamento Quintal Meia Pensão</p>
@@ -241,12 +297,18 @@
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-                                                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
             </div>
         </div>
         <div class="oferta-3">
@@ -265,12 +327,18 @@
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-            <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
   <?php
 }
 } else {
@@ -285,19 +353,38 @@ echo "<p>Nenhum quarto encontrado.</p>";
         <div class="standard-container">
             <img src="http://localhost/hotelurbano/reservas/img-reservas/apartamento-pisc.jpg" id="pisc">
             <?php
-                    $sql = "SELECT * FROM quartos WHERE id_quarto = 3";
-
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
+                   $sql = "SELECT * FROM quartos WHERE id_quarto = 3";
+                   $result = $conn->query($sql);
+                   
+                   if ($result->num_rows > 0) {
+                       while ($row = $result->fetch_assoc()) {
+                           $id_quarto = $row['id_quarto'];
+                   
+                           $sql_reservas = "SELECT COUNT(*) AS total_reservas FROM reservas WHERE id_quarto = $id_quarto";
+                           $resultado_reservas = $conn->query($sql_reservas);
+                           $row_reservas = $resultado_reservas->fetch_assoc();
+                           $limite_reservas = $row['limite_reservas'] - $row_reservas['total_reservas'];
+                   
+                           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                               if ($limite_reservas > 0) {
+                                   $sql_update = "UPDATE quartos SET limite_reservas = limite_reservas - 1 WHERE id_quarto = $id_quarto";
+                                   $conn->query($sql_update);
+                                   $limite_reservas--; 
+                               } else {
+                                   echo "Limite de reservas atingido para este quarto.";
+                               }
+                           }
+                       
+                   ?>
             <div class="title-2">
                 <p> <?php echo $row["tipo_quarto"]; ?></p>
             </div>
             <div class="text-1">
-                <h4>Apartamento Standard Quintal Piscina - Contam com uma confortável cama box de casal (1.60m x 2m), um afetivo jardim privado com balanço rústico e vistas pra piscina, além de um pequeno quintal interno, com chuveirão. O design de charme está em toda parte, inclusive no exclusivo banheiro panorâmico para o quintal interno. Também possuem telefone, frigobar, ar condicionado split, tv a cabo, banheiro com água quente, secador de cabelo e cofre digital.</h4>
+                <h4><?php echo $row["descricao"]; ?></h4>
             </div>
+            <div class="quartos-ocupados">
+                                <p>*Acomodações disponíveis: <?php echo $limite_reservas; ?></p>
+                            </div>
             <div class="grupo">
                 <img src="http://localhost/hotelurbano/reservas/img-reservas/grupo.png">
                 <p>Ocup.max: <?php echo $row["ocupacao_maxima"]; ?></p>
@@ -323,13 +410,19 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
-<br>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
+
                 <div class="oferta-2">
 
                     <p> Apartamento Quintal Piscina Meia Pensão</p>
@@ -347,12 +440,18 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>                  
-                    <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
                 </div>
             </div>
             <div class="oferta-3">
@@ -372,12 +471,18 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <b>/noite</b> 
                                 </div>
               
-                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
    
 
     </section>
@@ -394,19 +499,38 @@ echo "<p>Nenhum quarto encontrado.</p>";
     <div class="standard-container">
         <img src="http://localhost/hotelurbano/reservas/img-reservas/apartamentos-fam.jpg" id="fam">
         <?php
-                    $sql = "SELECT * FROM quartos WHERE id_quarto = 4";
-
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
+                   $sql = "SELECT * FROM quartos WHERE id_quarto = 4";
+                   $result = $conn->query($sql);
+                   
+                   if ($result->num_rows > 0) {
+                       while ($row = $result->fetch_assoc()) {
+                           $id_quarto = $row['id_quarto'];
+                   
+                           $sql_reservas = "SELECT COUNT(*) AS total_reservas FROM reservas WHERE id_quarto = $id_quarto";
+                           $resultado_reservas = $conn->query($sql_reservas);
+                           $row_reservas = $resultado_reservas->fetch_assoc();
+                           $limite_reservas = $row['limite_reservas'] - $row_reservas['total_reservas'];
+                   
+                           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                               if ($limite_reservas > 0) {
+                                   $sql_update = "UPDATE quartos SET limite_reservas = limite_reservas - 1 WHERE id_quarto = $id_quarto";
+                                   $conn->query($sql_update);
+                                   $limite_reservas--; 
+                               } else {
+                                   echo "Limite de reservas atingido para este quarto.";
+                               }
+                           }
+                       
+                   ?>
         <div class="title-3">
             <p><?php echo $row["tipo_quarto"]; ?></p>
         </div>
         <div class="text-2">
             <h4><?php echo $row["descricao"]; ?></h4>
         </div>
+        <div class="quartos-ocupados">
+                                <p>*Acomodações disponíveis: <?php echo $limite_reservas; ?></p>
+                            </div>
         <div class="grupo">
             <img src="http://localhost/hotelurbano/reservas/img-reservas/grupo.png">
             <p>Ocup.max: <?php echo $row["ocupacao_maxima"]; ?> pessoas</p>
@@ -431,13 +555,19 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-            <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
-<br>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
+
             <div class="oferta-2">
 
                 <p> Apartamento Quintal Família Meia Pensão</p>
@@ -455,12 +585,18 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <b>/noite</b> 
                                 </div>
               
-                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
             </div>
         </div>
         <div class="oferta-3">
@@ -479,12 +615,18 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-            <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
         </div>
         <?php
         }
@@ -503,19 +645,38 @@ echo "<p>Nenhum quarto encontrado.</p>";
         <div class="standard-container">
             <img src="http://localhost/hotelurbano/reservas/img-reservas/bangaloluxo2%20.jpg" id="luxo">
             <?php
-                    $sql = "SELECT * FROM quartos WHERE id_quarto = 5";
-
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
+                   $sql = "SELECT * FROM quartos WHERE id_quarto = 5";
+                   $result = $conn->query($sql);
+                   
+                   if ($result->num_rows > 0) {
+                       while ($row = $result->fetch_assoc()) {
+                           $id_quarto = $row['id_quarto'];
+                   
+                           $sql_reservas = "SELECT COUNT(*) AS total_reservas FROM reservas WHERE id_quarto = $id_quarto";
+                           $resultado_reservas = $conn->query($sql_reservas);
+                           $row_reservas = $resultado_reservas->fetch_assoc();
+                           $limite_reservas = $row['limite_reservas'] - $row_reservas['total_reservas'];
+                   
+                           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                               if ($limite_reservas > 0) {
+                                   $sql_update = "UPDATE quartos SET limite_reservas = limite_reservas - 1 WHERE id_quarto = $id_quarto";
+                                   $conn->query($sql_update);
+                                   $limite_reservas--; 
+                               } else {
+                                   echo "Limite de reservas atingido para este quarto.";
+                               }
+                           }
+                       
+                   ?>
             <div class="title-4">
                 <p><?php echo $row["tipo_quarto"]; ?></p>
             </div>
             <div class="text-3">
                 <h4><?php echo $row["descricao"]; ?></h4>
             </div>
+            <div class="quartos-ocupados">
+                                <p>*Acomodações disponíveis: <?php echo $limite_reservas; ?></p>
+                            </div>
             <div class="grupo">
                 <img src="http://localhost/hotelurbano/reservas/img-reservas/grupo.png">
                 <p>Ocup.max: <?php echo $row["ocupacao_maxima"]; ?></p>
@@ -541,13 +702,19 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
+  
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
-<br>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
                 <div class="oferta-2">
 
                     <p> Bangalô Luxo Meia Pensão</p>
@@ -564,12 +731,18 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-                    <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
                 </div>
             </div>
             <div class="oferta-3">
@@ -589,12 +762,18 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <b>/noite</b> 
                                 </div>
              
-                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
                 <?php
         }
     } else {
@@ -609,19 +788,38 @@ echo "<p>Nenhum quarto encontrado.</p>";
 
             <img src="http://localhost/hotelurbano/reservas/img-reservas/bangalosuperluxo.jpg" id="super">
             <?php
-                    $sql = "SELECT * FROM quartos WHERE id_quarto = 6";
-
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
+                   $sql = "SELECT * FROM quartos WHERE id_quarto = 6";
+                   $result = $conn->query($sql);
+                   
+                   if ($result->num_rows > 0) {
+                       while ($row = $result->fetch_assoc()) {
+                           $id_quarto = $row['id_quarto'];
+                   
+                           $sql_reservas = "SELECT COUNT(*) AS total_reservas FROM reservas WHERE id_quarto = $id_quarto";
+                           $resultado_reservas = $conn->query($sql_reservas);
+                           $row_reservas = $resultado_reservas->fetch_assoc();
+                           $limite_reservas = $row['limite_reservas'] - $row_reservas['total_reservas'];
+                   
+                           if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                               if ($limite_reservas > 0) {
+                                   $sql_update = "UPDATE quartos SET limite_reservas = limite_reservas - 1 WHERE id_quarto = $id_quarto";
+                                   $conn->query($sql_update);
+                                   $limite_reservas--; 
+                               } else {
+                                   echo "Limite de reservas atingido para este quarto.";
+                               }
+                           }
+                       
+                   ?>
             <div class="title-5">
                 <p><?php echo $row["tipo_quarto"]; ?></p>
             </div>
             <div class="text-3">
                 <h4><?php echo $row["descricao"]; ?></h4>
             </div>
+            <div class="quartos-ocupados">
+                                <p>*Acomodações disponíveis: <?php echo $limite_reservas; ?></p>
+                            </div>
             <div class="grupo">
                 <img src="http://localhost/hotelurbano/reservas/img-reservas/grupo.png">
                 <p>Ocup.max: <?php echo $row["ocupacao_maxima"]; ?></p>
@@ -646,13 +844,19 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe'] ?>" style="text-decoration: none;">
-    <input type="button" value="Escolher">
-  </a>
 
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_cafe']; ?>" style="text-decoration:none;">
+    <input type="button" value="Escolher">
+</a>
 </div>
-         <br>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
 <div class="oferta-2">
 
                     <p> Bangalô Super Luxo Meia Pensão</p>
@@ -670,12 +874,18 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <strong>Impostos e tarifas não inclusos. </strong>
                                     <b>/noite</b> 
                                 </div>
-                    <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_meia']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
-</div>           
+</a>
+</div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>          
                 </div>
             </div>
             <div class="oferta-3">
@@ -695,12 +905,18 @@ echo "<p>Nenhum quarto encontrado.</p>";
                                     <b>/noite</b> 
                                 </div>
               
-                <div class="but-1">
-  <a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa'] ?>" style="text-decoration: none;">
+                                <?php if ($limite_reservas > 0): ?>
+                            
+                            <div class="but-1">
+<a href="http://localhost/hotelurbano/reservas/registro.php?id_quarto=<?php echo $row['id_quarto']; ?>&valor=<?php echo $row['valor_completa']; ?>" style="text-decoration:none;">
     <input type="button" value="Escolher">
-  </a>
-
+</a>
 </div>
+<?php else: ?>
+<div class="but-1">
+<input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
+</div>
+<?php endif; ?>
             </div>
         </div>
 

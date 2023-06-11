@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$id_quarto', '$id_cliente', '$check_in', '$check_out', $ocupantes, '$forma_pagamento', '$valor_total')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "Reserva cadastrada com sucesso!";
+        echo "Reserva cadastrada com sucesso! :)";
     } else {
         echo "Erro ao cadastrar a reserva: " . mysqli_error($conn);
     }

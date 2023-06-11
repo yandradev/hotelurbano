@@ -7,9 +7,8 @@ if (isset($_COOKIE['id_cliente'])) {
     $id_cliente = $_COOKIE['id_cliente'];
     
 } else {
-    header("Location: login.php");
-  
-    exit();
+    header("Location: http://localhost/hotelurbano/entrada/login.php");
+    exit;
 }
 
 ?>

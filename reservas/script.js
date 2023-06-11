@@ -129,3 +129,5 @@ function redirecionarParaRegistro(opcao) {
   window.location.href = url;
 }
 
+  
+

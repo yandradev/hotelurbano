@@ -14,6 +14,9 @@
   session_start();
   if (isset($_COOKIE['id_cliente'])) {
     $id_cliente = $_COOKIE['id_cliente'];
+  } else {
+    header("Location: http://localhost/hotelurbano/entrada/login.php");
+    exit;
   }
 
   if (isset($_GET['id_quarto'])) {
@@ -23,6 +26,18 @@
   if (isset($_GET['valor'])) {
     $valor = $_GET['valor'];
   }
+
+
+$sql = "SELECT data_entrada, data_saida FROM reservas WHERE id_quarto = $id_quarto";
+$result = $conn->query($sql);
+
+$reservas_existentes = array();
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    $reservas_existentes[] = $row;
+  }
+}
+
   ?>
 
   <section></section>
@@ -90,7 +105,7 @@
   <label>Número de ocupantes:</label>
   <br>
   <select id="quarto" name="ocupantes" onchange="atualizarOpcoesOcupantes()" required>
-    <option value="">Selecione</option>
+    <option value=""></option>
     <?php
     require_once 'conexao.php';
 
@@ -157,6 +172,32 @@
       </div>
     </form>
     <?php
+ 
+  function verificarReservaProxima($reservas, $checkIn, $checkOut) {
+    foreach ($reservas as $reserva) {
+      $dataEntrada = $reserva['data_entrada'];
+      $dataSaida = $reserva['data_saida'];
+      
+      if (($checkIn >= $dataEntrada && $checkIn <= $dataSaida) || ($checkOut >= $dataEntrada && $checkOut <= $dataSaida)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $checkIn = $_POST['check-in'];
+    $checkOut = $_POST['check-out'];
+    
+    if (verificarReservaProxima($reservas_existentes, $checkIn, $checkOut)) {
+      echo "<script>alert('Desculpe, você já possui uma reserva ativa ou muito próxima dessa data. Por favor, escolha outra data.');</script>";
+    } else {
+    
+    }
+  }
+  ?>
+   
+   <?php
       }
     } else {
       echo "<p>Nenhum resultado encontrado.</p>";
@@ -165,7 +206,9 @@
     ?>
   </div>
 
+
   <script src="http://localhost/hotelurbano/reservas/script.js"></script>
+
   <script>
   function atualizarOpcoesOcupantes() {
       var selectQuarto = document.getElementById("quarto");
