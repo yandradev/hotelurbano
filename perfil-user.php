@@ -38,11 +38,23 @@
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                     ?>
+          
+          
+          
+          
+          
+          
+          
             <fieldset>
+                
                 <div class="title">
                     <p>Informações básicas:</p>
                 </div>
                 <br>
+                <div class= "status-reserva">
+                    <li><a href="http://localhost/hotelurbano/status.php">| Status de reservas </a></li>
+                    </div>
+                    
              <div class= "input-box">
                 <label for="nome">Nome completo:</label>
                 <input type="text" name="nome" value="<?php echo $row["nome_completo"]; ?>" id="nome">

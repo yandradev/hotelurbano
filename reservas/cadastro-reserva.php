@@ -29,7 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$id_quarto', '$id_cliente', '$check_in', '$check_out', $ocupantes, '$forma_pagamento', '$valor_total')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "Reserva cadastrada com sucesso! :)";
+        echo '<script>';
+    echo 'if (confirm("Reserva cadastrada com sucesso! Deseja verificar o status da reserva? :)")) {';
+    echo 'window.location.href = "http://localhost/hotelurbano/status.php";'; 
+    echo '} else {';
+    echo 'window.location.href = "http://localhost/hotelurbano/perfil-user.php";'; 
+    echo '}';
+    echo '</script>';
     } else {
         echo "Erro ao cadastrar a reserva: " . mysqli_error($conn);
     }

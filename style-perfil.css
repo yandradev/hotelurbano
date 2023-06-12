@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Questrial&family=Raleway:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@200&family=Fjalla+One&family=Montserrat:wght@100;500;600;700&family=Open+Sans:wght@300&family=Oswald&family=Roboto:wght@100;300;500&family=Sofia+Sans+Semi+Condensed&family=Source+Sans+Pro:wght@200&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -111,4 +111,21 @@ small {
     width: 20px;
    margin-left: 35rem;
     margin-top: -5%;
+ }
+
+ .status-reserva  a {
+position: absolute;
+left: 73rem;
+text-transform: uppercase;
+margin-top: -18%;
+text-decoration: none;
+font-size: 20px;
+color: rgb(12, 240, 190);
+text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+color: black;
+font-family:  'Oswald', sans-serif;;
+ }
+
+ li {
+    list-style: none;
  }
