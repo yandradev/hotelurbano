@@ -83,9 +83,11 @@
         <div class="listar">
             <a href="read-cliente.php"><button class="green-2"> Listar clientes</button></a>
         </div>
-        <div class="delete">
-            <a href="deletar-cliente.php"><button class="orange-2"> Deletar cliente</button></a>
+      <div class="listar-reservas">
+            <a href="read-reservas.php"><button class="orange-2"> Listar reservas</button></a>
         </div>
+      
+    
       <script src="script.js"></script>
     </div>
 

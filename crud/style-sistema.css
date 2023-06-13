@@ -275,3 +275,7 @@ fieldset .fieldset-adm {
     left: 14%;
   
 }
+
+.delete button {
+    background-color: #4a63bb;
+}

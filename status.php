@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservas</title>
+    <meta charset="utf-8">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Raleway:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Questrial&family=Raleway:wght@200&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    section {
+        width: 100%;
+        height: 5vh;
+        background: linear-gradient(90deg, rgba(243, 108, 92, 1) 0%, rgba(72, 98, 183, 1) 47%, rgba(76, 187, 163, 1) 94%);
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 12px;
+        text-align: center;
+    }
+
+    th {
+        background-color: rgb(166, 183, 237);
+        color: black;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .title h2 {
+        font-family: 'DM Serif Display', serif;
+        margin-top: 1%;
+        text-align: center;
+        font-size: 25px;
+        color: rgb(12, 240, 190);
+        text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0, 0, 0, 0.15);
+        color: black;
+    }
+
+    table {
+        border-radius: 10px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 7%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        width: 5rem;
+    }
+
+    hr {
+        border-style: ridge;
+    }
+
+    p {
+        font-size: 20px;
+        margin-top: 30%;
+        text-transform: uppercase;
+    }
+
+    .investimento {
+        text-align: center;
+        position: absolute;
+        margin-top: -5%;
+        font-weight: bold;
+
+    }
+
+  
+
+    .investimento span {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-shadow: 2px 2px 0px #eee9e9, 5px 4px 0px rgba(0, 0, 0, 0.15);
+    color: black;
+        
+    }
+
+
+.comprovante-button input[type=submit] {
+    background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
+    border-style: none;
+    padding: 6px 35px 8px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    border-radius: 30px;
+    text-shadow: 1px 1px 1px black;
+    margin-top: 15rem;
+   
+}
+.comprovante-button {
+    display: block;
+    margin: auto;
+    position: absolute;
+}
+a {
+    text-decoration: none;
+}
+</style>
+<body>
+<?php
+require_once("conexao.php");
+session_start();
+
+if (isset($_COOKIE['id_cliente'])) {
+    $id_cliente = $_COOKIE['id_cliente'];
+} else {
+    header("Location: http://localhost/hotelurbano/entrada/login.php");
+    exit;
+}
+
+$sql_reservas = "SELECT id_reserva, data_entrada, data_saida, quantidade_ocupantes, valor_total, forma_de_pagamento FROM reservas WHERE id_cliente = $id_cliente";
+$resultado_reservas = mysqli_query($conn, $sql_reservas);
+
+$sql_cliente = "SELECT * FROM clientes WHERE id_cliente = $id_cliente";
+$resultado_cliente = $conn->query($sql_cliente);
+
+if ($resultado_cliente && $resultado_cliente->num_rows > 0) {
+    $row_cliente = $resultado_cliente->fetch_assoc();
+    ?>
+    <section></section>
+    <img src="http://localhost/hotelurbano/homepage/img-homepage/logourbano.png">
+    <div class="title">
+        <h2>Bem-vindo(a) às suas reservas, <?php echo $row_cliente["nome_completo"]; ?>!</h2>
+    </div>
+    <div class="container">
+    <?php if (mysqli_num_rows($resultado_reservas) > 0) {
+        $total_investido = 0;
+        ?>
+        <table border="1">
+            <tr>
+                <th>Número da reserva</th>
+                <th>Data de entrada</th>
+                <th>Data de saída</th>
+                <th>Valor</th>
+                <th>Ocupantes</th>
+                <th>Forma de pagamento efetuada</th>
+            </tr>
+          
+            <?php while ($dados_reserva = mysqli_fetch_assoc($resultado_reservas)) {
+            $total_investido += $dados_reserva["valor_total"];
+            ?>
+                <tr>
+                    <td><?php echo $dados_reserva["id_reserva"]; ?></td>
+                    <td><?php echo $dados_reserva["data_entrada"]; ?></td>
+                    <td><?php echo $dados_reserva["data_saida"] ?? ''; ?></td>
+                    <td><?php echo $dados_reserva["valor_total"]; ?></td>
+                    <td><?php echo $dados_reserva["quantidade_ocupantes"] ?? ''; ?></td>
+                    <td><?php echo $dados_reserva["forma_de_pagamento"]; ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+        <div class="investimento">
+            <span>Total investido em reservas: R$ <?php echo $total_investido; ?></span>
+        </div>
+        <a class="comprovante-button" href="select-reserva.php"><input type="submit" value="Emitir comprovante"></a>
+    <?php } else { ?>
+        <div class="alerta">
+            <p>Você ainda não realizou reservas.</p>
+        </div>
+    <?php } ?>
+    </div>
+<?php
+} else {
+    echo "<p>Impossível realizar a ação.</p>";
+}
+mysqli_close($conn);
+?>
+</body>
+</html>
