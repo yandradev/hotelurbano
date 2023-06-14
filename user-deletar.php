@@ -24,7 +24,7 @@
                         $id_cliente = $_COOKIE['id_cliente'];
                    
                     } else {
-                        header("Location: login.php");
+                        header(" http://localhost/hotelurbano/entrada/login.php");
                         exit();
                     }
                     

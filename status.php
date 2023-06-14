@@ -14,6 +14,10 @@
         box-sizing: border-box;
     }
 
+    body {
+        overflow:scroll;
+    }
+
     section {
         width: 100%;
         height: 5vh;
@@ -32,9 +36,14 @@
     }
 
     th {
-        background-color: rgb(166, 183, 237);
+        background: linear-gradient(90deg, rgba(243, 108, 92, 1) 0%, rgba(72, 98, 183, 1) 47%, rgba(76, 187, 163, 1) 94%);
         color: black;
-        font-weight: bold;
+        font-weight:bolder;
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        font-size: 17px;
+        text-shadow: 2px 2px 2px black;
     }
 
     tr:nth-child(even) {
@@ -77,8 +86,12 @@
 
     p {
         font-size: 20px;
-        margin-top: 30%;
+        margin-top: -3%;
         text-transform: uppercase;
+    }
+
+    .alerta {
+        text-align: center;
     }
 
     .investimento {
@@ -101,7 +114,7 @@
     }
 
 
-.comprovante-button input[type=submit] {
+.comprovante-button input[type=submit], .delete-reserva input[type=submit] {
     background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
     border-style: none;
     padding: 6px 35px 8px;
@@ -110,16 +123,34 @@
     font-size: 17px;
     border-radius: 30px;
     text-shadow: 1px 1px 1px black;
-    margin-top: 15rem;
+    margin-top: 12rem;
    
 }
-.comprovante-button {
-    display: block;
-    margin: auto;
-    position: absolute;
+.comprovante {
+ display: inline-block;
+ margin-top: -12%;
+ left: 30%;
+ position: absolute;
+
+   
+  
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+
+
+.delete-reserva {
+ margin-top: -12%;
+ display: inline-block;
+ position: absolute;
+ left: 50%;
+
+
+} 
+.delete-reserva input[type=submit] {
+    padding: 5px 60px 9px;
 }
 </style>
 <body>
@@ -178,14 +209,28 @@ if ($resultado_cliente && $resultado_cliente->num_rows > 0) {
         <div class="investimento">
             <span>Total investido em reservas: R$ <?php echo $total_investido; ?></span>
         </div>
-        <a class="comprovante-button" href="select-reserva.php"><input type="submit" value="Emitir comprovante"></a>
-    <?php } else { ?>
+     
+       
+    </div>
+
+
+
+
+<div class="comprovante">
+        <a class="comprovante-button" href="select-reserva.php"><input type="submit" value="Comprovante de reserva"></a>
+       </div>
+        <div class= "delete-reserva">
+                 <a class="delete-button" href="deletar-reserva.php"><input type="submit" value="Deletar reserva"></a>
+       </div>
+      
+       <?php } else { ?>
         <div class="alerta">
             <p>Você ainda não realizou reservas.</p>
         </div>
-    <?php } ?>
-    </div>
-<?php
+
+       <?php } ?>
+
+       <?php
 } else {
     echo "<p>Impossível realizar a ação.</p>";
 }

@@ -6,7 +6,7 @@ if (isset($_COOKIE['id_cliente'])) {
     $id_cliente = $_COOKIE['id_cliente'];
 
 } else {
-    header("Location: login.php");
+    header("Location: http://localhost/hotelurbano/entrada/login.php");
     exit();
 }
 if (isset($_POST['email']) && isset($_POST['senha'])) {
@@ -23,6 +23,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
         if ($email == $emailBanco && $senha == $senhaBanco) {
            
             $sql = "DELETE FROM clientes WHERE id_cliente = $id";
+            $sql = "DELETE FROM reservas WHERE id_cliente = $id";
             if (mysqli_query($conn, $sql)) {
                 echo '<script>alert("Perfil deletado com sucesso"); window.location.href = "http://localhost/hotelurbano/";</script>';
             } else {

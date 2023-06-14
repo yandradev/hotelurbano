@@ -46,6 +46,30 @@ $resultado = mysqli_query($conn, $sql);
 		left: 37%;
 
 	}
+	table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid grey;
+        padding: 12px;
+        text-align: center;
+    }
+
+    th {
+        background-color: rgb(220, 225, 229);
+        color: black;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
 
 table {
 	border-radius: 10px;
