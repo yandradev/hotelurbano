@@ -18,7 +18,8 @@ $resultado = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($resultado) !== 1) {
     $_SESSION['loginErro'] = "Email ou senha inválidos.";
-    header("Location: login.php");
+    header("Location: http://localhost/hotelurbano/entrada/login.php");
+   
     exit();
 }
 

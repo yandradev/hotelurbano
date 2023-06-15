@@ -54,7 +54,7 @@
   </div>
         <br>
         <div class="container-1">
-            <fieldset class="fieldset-adm">
+            <fieldset class="fieldset-adm" style="  padding: 25px 25px 16px;">
             <form method="POST" action="create-admin.php">
                 <input type="text" name="email" placeholder="Email:" class="input-1">
                 <br>
@@ -66,25 +66,30 @@
             <br>
     </fieldset>
     <div class="listar">
-        <a href="read-admin.php"><button class="green-2">Listar administradores</button></a>
+        <a href="http://localhost/hotelurbano/crud/read-admin.php"><button class="green-2">Listar administradores</button></a>
     </div>
     <div class="atualizar">
-        <a href="atualizar-admin.php"><button class="orange-2">Atualizar administradores</button></a>
+        <a href="http://localhost/hotelurbano/crud/atualizar-admin.php"><button class="orange-2">Atualizar administradores</button></a>
     </div>
     <div class="delete">
-        <a href="deletar-admin.php"><button class="blue-2">Deletar administrador</button></a>
+        <a href="http://localhost/hotelurbano/crud/deletar-admin.php"><button class="blue-2">Deletar administrador</button></a>
     </div>
+
+
 </div>
             <div class="container-0">
-                <fieldset class="fieldset-cliente">
+                <fieldset class="fieldset-cliente" style=" width: 15rem;">
               <img src="./img/cliente.png">
                 <br>
         </fieldset>
-        <div class="listar">
-            <a href="read-cliente.php"><button class="green-2"> Listar clientes</button></a>
+        <div class="cadastrar-cliente">
+            <a href="http://localhost/hotelurbano/entrada/cadastro.php"><button class="green-3" > Cadastrar cliente </button></a>
         </div>
-      <div class="listar-reservas">
-            <a href="read-reservas.php"><button class="orange-2"> Listar reservas</button></a>
+        <div class="atualizar">
+            <a href="http://localhost/hotelurbano/entrada/cadastro.php"><button class="orange-3" > Atualizar cliente </button></a>
+        </div>
+      <div class="listar-clientes">
+            <a href="read-cliente.php"><button class="blue-3" > Listar clientes</button></a>
         </div>
       
     
