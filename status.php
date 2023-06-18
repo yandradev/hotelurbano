@@ -3,7 +3,7 @@
 <head>
     <title>Reservas</title>
     <meta charset="utf-8">
-</head>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Raleway:wght@300&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Questrial&family=Raleway:wght@200&display=swap');
@@ -114,7 +114,7 @@
     }
 
 
-.comprovante-button input[type=submit], .delete-reserva input[type=submit] {
+button , .delete-reserva input[type=submit] {
     background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
     border-style: none;
     padding: 6px 35px 8px;
@@ -126,14 +126,23 @@
     margin-top: 12rem;
    
 }
-.comprovante {
- display: inline-block;
- margin-top: -12%;
- left: 30%;
+.comprovante a{
+ 
+ margin-top: -25%;
+ left: 72rem;
  position: absolute;
+ font-size: 22px;
+text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+color: black;
+font-family:  'Oswald', sans-serif;
+
 
    
   
+}
+
+li {
+    list-style: none;
 }
 a {
   text-decoration: none;
@@ -149,10 +158,24 @@ a {
 
 
 } 
-.delete-reserva input[type=submit] {
-    padding: 5px 60px 9px;
+
+.atualizar-reserva  {
+    margin-top: -13.4%;
+ display: inline-block;
+ position: absolute;
+ left: 33%;
+
+}
+.delete-reserva input[type=submit]   {
+    padding: 5px 40px 9px;
+}
+
+.atualizar-button  {
+    padding: 5px 55px 9px;
 }
 </style>
+</head>
+
 <body>
 <?php
 require_once("conexao.php");
@@ -209,32 +232,37 @@ if ($resultado_cliente && $resultado_cliente->num_rows > 0) {
         <div class="investimento">
             <span>Total investido em reservas: R$ <?php echo $total_investido; ?></span>
         </div>
-     
-       
     </div>
 
-
-
-
 <div class="comprovante">
-        <a class="comprovante-button" href="select-reserva.php"><input type="submit" value="Comprovante de reserva"></a>
+<ul>
+<li class="comprovante-li"><a href="http://localhost/hotelurbano/select-reserva.php"> | Emitir comprovante</a></li>
+</ul>
        </div>
         <div class= "delete-reserva">
                  <a class="delete-button" href="deletar-reserva.php"><input type="submit" value="Deletar reserva"></a>
        </div>
-      
-       <?php } else { ?>
-        <div class="alerta">
-            <p>Você ainda não realizou reservas.</p>
-        </div>
+      <br>
+    <div class="atualizar-reserva">
+     <a href="http://localhost/hotelurbano/reservas/atualizar-reservas.php"><button type="submit">Atualizar reserva</button></a>   
+    </div>
+</form>
 
-       <?php } ?>
+</form>
 
-       <?php
+<?php } else { ?>
+    <div class="alerta">
+        <p>Você ainda não realizou reservas.</p>
+    </div>
+<?php } ?>
+
+<?php
 } else {
     echo "<p>Impossível realizar a ação.</p>";
 }
 mysqli_close($conn);
 ?>
+
+
 </body>
 </html>

@@ -125,35 +125,37 @@ if ($result->num_rows > 0) {
 
           <br>
           <div class="input-box">
-            <label>Formas de pagamento:</label>
-            <br>
-            <select id="pagamento" onchange="mostrarOpcoesPagamento()" name="pagamento" required>
-              <option value="">Selecione</option>
-              <option value="Pix">Pix</option>
-              <option value="Dinheiro físico">Dinheiro físico</option>
-            </select>
-          </div>
-          <div id="opcoes-pix" class="input-pagamento" style="display: none;">
-            <br>
-            <label>Chave pix Hotel Urbano/CNPJ:</label>
-            <br>
-            <input type="text" id="chave-pix" name="chave-pix" value="12.345.678/0001-00" readonly>
-            <br>
-            <label>Razão social:</label>
-            <br>
-            <input type="text" id="razao-social" name="razao-social" value="Hospedaria Urbana S/A" readonly>
-          </div>
-          <div id="opcoes-dinheiro" class="input-pagamento" style="display: none;">
-            <br>
-            <label>Local de pagamento:</label>
-            <br>
-            <select id="local-pagamento" name="local-pagamento" required>
-              <option value=""></option>
-              <option value="Recepção na data de entrada">Recepção na data de entrada</option>
-              <option value="Durante a estadia">Durante a estadia</option>
-              <option value="Recepção na data de saída">Recepção na data de saída</option>
-            </select>
-          </div>
+  <label>Formas de pagamento:</label>
+  <br>
+  <select id="pagamento" onchange="mostrarOpcoesPagamento()" name="pagamento" required>
+    <option value="">Selecione</option>
+    <option value="Pix">Pix</option>
+    <option value="Dinheiro físico">Dinheiro físico</option>
+  </select>
+</div>
+
+<div id="opcoes-pix" class="input-pagamento" style="display: none;">
+  <br>
+  <label>Chave pix Hotel Urbano/CNPJ:</label>
+  <br>
+  <input type="text" id="chave-pix" name="chave-pix" value="12.345.678/0001-00" readonly>
+  <br>
+  <label>Razão social:</label>
+  <br>
+  <input type="text" id="razao-social" name="razao-social" value="Hospedaria Urbana S/A" readonly>
+</div>
+
+<div id="opcoes-dinheiro" class="input-pagamento" style="display: none;">
+  <br>
+  <label>Local de pagamento:</label>
+  <br>
+  <select id="local-pagamento" name="local-pagamento" required>
+    <option value=""></option>
+    <option value="Recepção na data de entrada">Recepção na data de entrada</option>
+    <option value="Durante a estadia">Durante a estadia</option>
+    <option value="Recepção na data de saída">Recepção na data de saída</option>
+  </select>
+  </div>
           <br>
           <label>Número de noites selecionadas:</label>
           <br>

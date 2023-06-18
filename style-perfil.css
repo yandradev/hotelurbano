@@ -123,9 +123,53 @@ font-size: 20px;
 color: rgb(12, 240, 190);
 text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
 color: black;
-font-family:  'Oswald', sans-serif;;
+font-family:  'Oswald', sans-serif;
  }
 
  li {
     list-style: none;
  }
+
+ .input-box-id {
+
+
+    text-align:center;  
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgb(82, 79, 79);
+    margin-top: -1rem;
+ }
+
+ .input-box-id input {
+    width: 20%;
+    height: 30px;
+    padding: 5px;
+    display: block;
+    margin: auto;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    margin-top: 3%;
+    background-color: #e2f6f7;
+    color: #6c5151;
+    font-size: 14px;
+    text-align: center;
+ }
+
+ .input-box-id button {
+    background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
+    border-style: none;
+    padding: 6px 40px 8px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    border-radius: 30px;
+    text-shadow: 2px 2px 2px black;
+    margin-top: 2rem;
+   
+ }
+
+
+ 

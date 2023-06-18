@@ -14,12 +14,14 @@
     <div class="form-image">
         <img src="http://localhost/hotelurbano/homepage/img-homepage/Fundo%20Branco.png">
     </div>
+
     <div class="container">
         <?php
         require_once 'conexao.php';
 
         $id_cliente = "";
         $show_form = true;
+        $cliente_encontrado = false;
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $id_cliente = $_POST["id_cliente"];
@@ -30,7 +32,11 @@
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 $show_form = false;
+                $cliente_encontrado = true;
         ?>
+                <script>
+                    alert("Cliente encontrado!");
+                </script>
                 <form action="update-cliente.php" method="POST" id="form">
                     <fieldset>
                         <div class="title">
@@ -107,26 +113,32 @@
                     </fieldset>
                     <br>
                     <div class="button-alter">
-                        <button type="submit">Salvar alterações</button>
+                        <button type="submit" style="position: absolute;  left: 45%;">Salvar alterações</button>
                     </div>
                 </form>
         <?php
-            } else {
-                echo "<p>Cliente não encontrado.</p>";
             }
         }
+
+        if (!$cliente_encontrado && $_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
-        <?php if ($show_form) { ?>
-            <form action="" method="POST">
-                <div class="input-box">
-                    <label for="id_cliente">ID do cliente:</label>
-                    <input type="text" name="id_cliente" id="id_cliente" required>
-                    <small></small>
-                </div>
+            <script>
+                alert("Cliente não encontrado!");
+            </script>
+        <?php
+        }
+        ?>
+        <form action="" method="POST" <?php if (!$show_form) echo 'style="display: none;"'; ?>>
+            <div class="input-box-id">
+                <label for="id_cliente">ID do cliente:</label>
+                <input type="text" name="id_cliente" id="id_cliente" required>
+                <small></small>
                 <br>
-                <button type="submit">Buscar</button>
-            </form>
-        <?php } ?>
+                <button type="submit" style=" width:12%; ">Buscar</button>
+               
+                <a href="http://localhost/hotelurbano/crud/read-cliente.php">   <button type="button" >Listar clientes</button></a>
+            </div>
+        </form>
         <script src="http://localhost/hotelurbano/validation/script.js"></script>
     </div>
 </body>

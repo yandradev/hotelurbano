@@ -301,9 +301,6 @@ if (isset($_COOKIE['id_cliente'])) {
         </footer>
     </section>
     <script src="./script-homepage.js"></script>
-
-
-
 </body>
 
 </html>

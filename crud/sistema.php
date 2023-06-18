@@ -77,7 +77,9 @@
 
 
 </div>
-            <div class="container-0">
+         
+
+<div class="container-0">
                 <fieldset class="fieldset-cliente" style=" width: 15rem;">
               <img src="./img/cliente.png">
                 <br>
@@ -85,8 +87,8 @@
         <div class="cadastrar-cliente">
             <a href="http://localhost/hotelurbano/entrada/cadastro.php"><button class="green-3" > Cadastrar cliente </button></a>
         </div>
-        <div class="atualizar">
-            <a href="http://localhost/hotelurbano/entrada/cadastro.php"><button class="orange-3" > Atualizar cliente </button></a>
+        <div class="atualizar-cliente">
+            <a href="http://localhost/hotelurbano/crud/atualizar-cliente.php"><button class="orange-3" > Atualizar cliente </button></a>
         </div>
       <div class="listar-clientes">
             <a href="read-cliente.php"><button class="blue-3" > Listar clientes</button></a>

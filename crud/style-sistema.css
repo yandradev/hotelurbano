@@ -236,7 +236,7 @@ fieldset .fieldset-adm {
     font-family: 'Oswald', sans-serif;
     text-shadow: 1px 1px 1px black;
     border-style: none;
-    position: relative;
+   
     left: 60%;
     margin-top: 1%;
     position: absolute;
@@ -245,7 +245,7 @@ fieldset .fieldset-adm {
 .orange-3 {
     width: 84%;
     background-color: #e76051;
-    position: relative;
+    
     left: 60%;
     margin-top: 14%;
     padding: 5px 72px 10px;
@@ -259,7 +259,7 @@ fieldset .fieldset-adm {
 }
 
 .blue-3{
-    position: relative;
+   
     width: 84%;
     left: 60%;
     margin-top: 27%;
