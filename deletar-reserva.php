@@ -14,6 +14,10 @@
             box-sizing: border-box;
         }
 
+        select option {
+            margin: 0;
+        }
+
         section {
             background: linear-gradient(90deg, rgba(243, 108, 92, 1) 0%, rgba(72, 98, 183, 1) 47%, rgba(76, 187, 163, 1) 94%);
             width: 100%;
@@ -79,16 +83,15 @@
             margin: auto;
         }
         
-    select {
-        display: block;
-        cursor:pointer;
-        border:0;
-        border-bottom: 1px solid black;
-        width: 100%;
-        font-size: 15px;
-        padding: 3px 0px 0px;
-}
-    
+        select {
+            display: block;
+            cursor: pointer;
+            border: 0;
+            border-bottom: 1px solid black;
+            width: 100%;
+            font-size: 15px;
+            padding: 3px 0px 0px;
+        }
 
     </style>
 </head>
@@ -99,8 +102,8 @@
     </div>
     <?php
   
-   require_once 'conexao.php';
-   session_start();
+    require_once 'conexao.php';
+    session_start();
     if (isset($_COOKIE['id_cliente'])) {
         $id_cliente = $_COOKIE['id_cliente'];
     } else {
@@ -123,21 +126,20 @@
                         <label for="reserva">ID da reserva:</label>
                       
                         <select name="id_reserva" id="id_reserva" required>
-                       
                          <?php
-                        
                             $sql = "SELECT id_reserva FROM reservas WHERE id_cliente = $id_cliente";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
+                               echo "<option value=''></option>";
                                 while ($row = $result->fetch_assoc()) {
                                     $id_reserva = $row['id_reserva'];
-                                    echo "<option value=''></option>";
+                                   
                                     echo "<option value='$id_reserva'>$id_reserva</option>";
                                 }
                             } else {
-                               
+                                echo '<script>alert("Reserva não encontrada")</script>';
                             }
-                            ?>
+                        ?>
                         </select>
                         <br>
                     

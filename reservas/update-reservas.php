@@ -18,14 +18,11 @@ $valorPensaoCompleta = 0;
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_reserva'])) {
   $idReserva = $_GET['id_reserva'];
 
-  $sql = "SELECT quartos.id_quarto, quartos.tipo_quarto, reservas.data_entrada, reservas.data_saida, reservas.quantidade_ocupantes, reservas.forma_de_pagamento, reservas.valor_total, quartos.valor_cafe, quartos.valor_meia, quartos.valor_completa
+  $sql = "SELECT quartos.id_quarto, quartos.tipo_quarto, reservas.data_entrada, reservas.data_saida, reservas.quantidade_ocupantes, reservas.forma_de_pagamento, reservas.valor_total, quartos.valor_cafe, quartos.valor_meia, quartos.valor_completa, reservas.regime_alimentacao
   FROM reservas
   JOIN quartos ON reservas.id_quarto = quartos.id_quarto
   WHERE reservas.id_reserva = " . intval($idReserva);
-$regimeAlimentacao = ""; 
-
   
-
   $result = $conn->query($sql);
 
   if ($result && $result->num_rows > 0) {
@@ -39,6 +36,8 @@ $regimeAlimentacao = "";
     $valorCafe = $row['valor_cafe'];
     $valorMeiaPensao = $row['valor_meia'];
     $valorPensaoCompleta = $row['valor_completa'];
+
+    $regimeAlimentacao = $row['regime_alimentacao'];
   } else {
     echo "Reserva não encontrada.";
     exit;
@@ -52,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $numOcupantes = $_POST['num_ocupantes'];
   $formaPagamento = $_POST['pagamento'];
   $valorTotal = $_POST['valor_total'];
+  $regimeAlimentacao = $_POST['regime_alimentacao'];
 
   if ($formaPagamento === 'Dinheiro físico') {
     $localPagamento = $_POST['local_pagamento'];
@@ -59,11 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   $sql = "UPDATE reservas SET valor_total = $valorTotal, data_entrada = '$dataEntrada', data_saida = '$dataSaida',
-          quantidade_ocupantes = $numOcupantes, forma_de_pagamento = '$formaPagamento'
+          quantidade_ocupantes = $numOcupantes, forma_de_pagamento = '$formaPagamento', regime_alimentacao = '$regimeAlimentacao'
           WHERE id_reserva = $idReserva";
 
   if ($conn->query($sql) === TRUE) {
-    echo "Reserva atualizada com sucesso!";
+    echo '<script>alert("Reserva atualizada! :)"); window.location.href = "http://localhost/hotelurbano/status.php";</script>';
   } else {
     echo "Erro ao atualizar a reserva: " . mysqli_error($conn);
   }
@@ -96,40 +96,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label>Atualização de reserva:</label>
           </div>
           <br>
-          <div class="input-box">
+          <div class="input-box-reserva">
             <label for="id_reserva">Número da reserva:</label>
             <br>
             <input type="text" id="id_reserva" name="id_reserva" value="<?php echo $idReserva; ?>" readonly>
           </div>
           <br>
-          <div class="input-box-quarto">
+          <div class="input-box-quarto" >
             <label>Quarto escolhido:</label>
             <br>
             <input type="text" id="quarto" name="quarto" value="<?php echo $row['tipo_quarto']; ?>" readonly>
           </div>
           <br>
           <div class="input-box">
-  <label for="regime_alimentacao">Regime de Alimentação:</label>
-  <br>
-  <select id="regime_alimentacao" name="regime_alimentacao">
-    <option value=""></option>
-    <option value="cafe_da_manha"<?php if ($regimeAlimentacao === 'cafe_da_manha') echo ' selected'; ?>>Apenas Café da Manhã - R$<?php echo $valorCafe; ?></option>
-    <option value="meia_pensao"<?php if ($regimeAlimentacao === 'meia_pensao') echo ' selected'; ?>>Meia Pensão - R$<?php echo $valorMeiaPensao; ?></option>
-    <option value="pensao_completa"<?php if ($regimeAlimentacao === 'pensao_completa') echo ' selected'; ?>>Pensão Completa - R$<?php echo $valorPensaoCompleta; ?></option>
-  </select>
-</div>
+          <label for="regime_alimentacao">Regime de Alimentação:</label>
+<br>
+<select name="regime_alimentacao" id="regime_alimentacao">
+  <option value="Café da Manhã" <?php if ($regimeAlimentacao === 'Café da Manhã') echo 'selected'; ?>>Café da Manhã</option>
+  <option value="Meia Pensão" <?php if ($regimeAlimentacao === 'Meia Pensão') echo 'selected'; ?>>Meia Pensão</option>
+  <option value="Pensão Completa" <?php if ($regimeAlimentacao === 'Pensão Completa') echo 'selected'; ?>>Pensão Completa</option>
+</select>
 
+          <br>
           <br>
           <div class="input-box">
             <label for="data_entrada">Data de entrada:</label>
             <br>
-            <input type="date" id="data_entrada" name="data_entrada">
+            <input type="date" id="data_entrada" name="data_entrada" value="<?php echo $checkIn; ?>">
           </div>
           <br>
           <div class="input-box">
             <label for="data_saida">Data de saída:</label>
             <br>
-            <input type="date" id="data_saida" name="data_saida">
+            <input type="date" id="data_saida" name="data_saida" value="<?php echo $checkOut; ?>">
           </div>
           <br>
           <label>Número de ocupantes:</label>
@@ -155,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="input-box">
             <label>Formas de pagamento:</label>
             <br>
-            <select id="pagamento" onchange="mostrarOpcoesPagamento()" name="pagamento" required>
+            <select id="pagamento" name="pagamento" required>
               <option value="">Selecione</option>
               <option value="Pix">Pix</option>
               <option value="Dinheiro físico" <?php if ($formaPagamento === 'Dinheiro físico') echo 'selected'; ?>>Dinheiro físico</option>
@@ -189,49 +188,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="number" id="valor_total" name="valor_total" value="<?php echo $valorTotal; ?>" readonly placeholder="Calculando valor...">
           </div>
           <br>
-          <div class="button-box">
+        </fieldset>
+        
+      </div>
+      <div class="button-box">
             <input type="submit" name="submit" value="Atualizar reserva">
           </div>
-        </fieldset>
-      </div>
     </form>
   </div>
   <script src="http://localhost/hotelurbano/reservas/script.js"></script>
   <script>
-const regimeAlimentacao = document.getElementById('regime_alimentacao');
-const dataEntrada = document.getElementById('data_entrada');
-const dataSaida = document.getElementById('data_saida');
-const valorTotal = document.getElementById('valor_total');
+  const regimeAlimentacao = document.getElementById('regime_alimentacao');
+  const dataEntrada = document.getElementById('data_entrada');
+  const dataSaida = document.getElementById('data_saida');
+  const valorTotal = document.getElementById('valor_total');
 
-regimeAlimentacao.addEventListener('change', calcularValorTotal);
-dataEntrada.addEventListener('change', calcularValorTotal);
-dataSaida.addEventListener('change', calcularValorTotal);
+  regimeAlimentacao.addEventListener('change', calcularValorTotal);
+  dataEntrada.addEventListener('change', calcularValorTotal);
+  dataSaida.addEventListener('change', calcularValorTotal);
 
-function calcularValorTotal() {
-  const valorCafe = <?php echo $valorCafe; ?>;
-  const valorMeiaPensao = <?php echo $valorMeiaPensao; ?>;
-  const valorPensaoCompleta = <?php echo $valorPensaoCompleta; ?>;
-  const checkIn = new Date(dataEntrada.value);
-  const checkOut = new Date(dataSaida.value);
-  const numDias = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+  function calcularValorTotal() {
+    const valorCafe = <?php echo $valorCafe; ?>;
+    const valorMeiaPensao = <?php echo $valorMeiaPensao; ?>;
+    const valorPensaoCompleta = <?php echo $valorPensaoCompleta; ?>;
+    const checkIn = new Date(dataEntrada.value);
+    const checkOut = new Date(dataSaida.value);
+    const numDias = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
 
-  let valorDiaria = 0;
-  if (regimeAlimentacao.value === 'cafe_da_manha') {
-    valorDiaria = valorCafe;
-  } else if (regimeAlimentacao.value === 'meia_pensao') {
-    valorDiaria = valorMeiaPensao;
-  } else if (regimeAlimentacao.value === 'pensao_completa') {
-    valorDiaria = valorPensaoCompleta;
+    let valorDiaria = 0;
+    if (regimeAlimentacao.value === 'Café da Manhã') {
+      valorDiaria = valorCafe;
+    } else if (regimeAlimentacao.value === 'Meia Pensão') {
+      valorDiaria = valorMeiaPensao;
+    } else if (regimeAlimentacao.value === 'Pensão Completa') {
+      valorDiaria = valorPensaoCompleta;
+    }
+
+    const valorTotalCalculado = (valorDiaria * numDias).toFixed(2);
+    valorTotal.value = valorTotalCalculado;
   }
 
-  const valorTotalCalculado = (valorDiaria * numDias).toFixed(2);
-  valorTotal.value = valorTotalCalculado;
-}
-
-calcularValorTotal();
-
-
+  calcularValorTotal();
 </script>
+
+<script>
+  const pagamento = document.getElementById('pagamento');
+  const opcoesPix = document.getElementById('opcoes-pix');
+  const opcoesDinheiro = document.getElementById('opcoes-dinheiro');
+
+  pagamento.addEventListener('change', mostrarOpcoesPagamento);
+
+  function mostrarOpcoesPagamento() {
+    if (pagamento.value === 'Pix') {
+      opcoesPix.style.display = 'block';
+      opcoesDinheiro.style.display = 'none';
+    } else if (pagamento.value === 'Dinheiro físico') {
+      opcoesDinheiro.style.display = 'block';
+      opcoesPix.style.display = 'none';
+    } else {
+      opcoesPix.style.display = 'none';
+      opcoesDinheiro.style.display = 'none';
+    }
+  }
+</script>
+
+
+
+
 
 
 </body>

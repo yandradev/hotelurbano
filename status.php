@@ -188,7 +188,7 @@ if (isset($_COOKIE['id_cliente'])) {
     exit;
 }
 
-$sql_reservas = "SELECT id_reserva, data_entrada, data_saida, quantidade_ocupantes, valor_total, forma_de_pagamento FROM reservas WHERE id_cliente = $id_cliente";
+$sql_reservas = "SELECT id_reserva, data_entrada, data_saida, quantidade_ocupantes, valor_total, forma_de_pagamento, regime_alimentacao FROM reservas WHERE id_cliente = $id_cliente";
 $resultado_reservas = mysqli_query($conn, $sql_reservas);
 
 $sql_cliente = "SELECT * FROM clientes WHERE id_cliente = $id_cliente";
@@ -213,6 +213,7 @@ if ($resultado_cliente && $resultado_cliente->num_rows > 0) {
                 <th>Data de saída</th>
                 <th>Valor</th>
                 <th>Ocupantes</th>
+                <th>Regime Alimentar</th>
                 <th>Forma de pagamento efetuada</th>
             </tr>
           
@@ -225,6 +226,7 @@ if ($resultado_cliente && $resultado_cliente->num_rows > 0) {
                     <td><?php echo $dados_reserva["data_saida"] ?? ''; ?></td>
                     <td><?php echo $dados_reserva["valor_total"]; ?></td>
                     <td><?php echo $dados_reserva["quantidade_ocupantes"] ?? ''; ?></td>
+                    <td><?php echo $dados_reserva["regime_alimentacao"] ?? ''; ?></td>
                     <td><?php echo $dados_reserva["forma_de_pagamento"]; ?></td>
                 </tr>
             <?php } ?>

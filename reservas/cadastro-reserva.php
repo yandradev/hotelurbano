@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ocupantes = intval($_POST['ocupantes']);
     $forma_pagamento = mysqli_real_escape_string($conn, $_POST['pagamento']);
     $valor_total = mysqli_real_escape_string($conn, $_POST['valor_total']);
+    $regimeAlimentar = mysqli_real_escape_string($conn, $_POST['regime_alimentar']);
+
 
     if (isset($_POST['ocupantes']) && $ocupantes !== '') {
         if ($ocupantes < 1 || $ocupantes > 4) {
@@ -25,8 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $forma_pagamento = 'Dinheiro físico - ' . $local_pagamento;
     }
 
-    $sql = "INSERT INTO reservas (id_quarto, id_cliente, data_entrada, data_saida, quantidade_ocupantes, forma_de_pagamento, valor_total)
-            VALUES ('$id_quarto', '$id_cliente', '$check_in', '$check_out', $ocupantes, '$forma_pagamento', '$valor_total')";
+    $sql = "INSERT INTO reservas (id_quarto, id_cliente, data_entrada, data_saida, quantidade_ocupantes, forma_de_pagamento, valor_total, regime_alimentacao)
+    VALUES ('$id_quarto', '$id_cliente', '$check_in', '$check_out', $ocupantes, '$forma_pagamento', '$valor_total', '$regimeAlimentar')";
+
 
     if (mysqli_query($conn, $sql)) {
         echo '<script>';

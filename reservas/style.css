@@ -84,7 +84,7 @@ select {
 }
 
 
-.input-submit input[type=submit] {
+.button-box input[type=submit] {
     background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
     border-style: none;
     padding: 5px 8px 8px;
@@ -99,7 +99,7 @@ select {
 
 }
 
-.input-submit {
+.button-box  {
     display: flex;
     justify-content: center;
 }
@@ -113,11 +113,12 @@ select {
    
 }
 
-.input-box-quarto input {
+.input-box-quarto input  ,.input-box-reserva input  {
     font-weight: bold; 
-    color: black; 
+    color:  rgb(64, 164, 142);
  font-size: 15px; 
 }
+
 
 label {
 font-weight: bold;
