@@ -11,7 +11,7 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
-    overflow: scroll;
+    overflow-x: hidden;
   
  
 }

@@ -8,6 +8,47 @@
 /opt/lampale=1.0">
     <link rel="stylesheet" href="./profile/css/style.css">
     <title>Cadastre-se no Hotel Urbano</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function formatCPF(cpf) {
+      cpf = cpf.replace(/\D/g, '');
+      cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+      cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+      cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+      return cpf;
+    }
+
+    function updateCPFInput() {
+      var input = document.getElementById('cpf');
+      input.value = formatCPF(input.value);
+    }
+
+    $(document).ready(function() {
+      $('#cpf').on('input', function() {
+        updateCPFInput();
+      });
+    });
+
+    function formatCEP(cep) {
+      cep = cep.replace(/\D/g, ''); 
+      cep = cep.replace(/(\d{5})(\d)/, '$1-$2');
+      return cep;
+    }
+
+    function updateCEPInput() {
+      var input = document.getElementById('cep');
+      input.value = formatCEP(input.value);
+    }
+
+    $(document).ready(function() {
+      $('#cep').on('input', function() {
+        updateCEPInput();
+      });
+    });
+  </script>
+
+
 </head>
 
 <body>
@@ -124,6 +165,8 @@
     </div>
     <script type="text/javascript" src="dynamic/script.js"></script>
     <script type="text/javascript" src="dynamic/cep.js"></script>
+ 
+
 
 
     </div>

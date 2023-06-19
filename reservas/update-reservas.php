@@ -49,17 +49,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $dataEntrada = $_POST['data_entrada'];
   $dataSaida = $_POST['data_saida'];
   $numOcupantes = $_POST['num_ocupantes'];
-  $formaPagamento = $_POST['pagamento'];
+
   $valorTotal = $_POST['valor_total'];
   $regimeAlimentacao = $_POST['regime_alimentacao'];
-
+  $formaPagamento = $_POST['forma_pagamento'];
+  
   if ($formaPagamento === 'Dinheiro físico') {
-    $localPagamento = $_POST['local_pagamento'];
+    $localPagamento = $_POST['local-pagamento'];
     $formaPagamento = "Dinheiro físico - $localPagamento";
   }
 
   $sql = "UPDATE reservas SET valor_total = $valorTotal, data_entrada = '$dataEntrada', data_saida = '$dataSaida',
-          quantidade_ocupantes = $numOcupantes, forma_de_pagamento = '$formaPagamento', regime_alimentacao = '$regimeAlimentacao'
+          quantidade_ocupantes = $numOcupantes, regime_alimentacao = '$regimeAlimentacao', forma_de_pagamento = '$formaPagamento'
           WHERE id_reserva = $idReserva";
 
   if ($conn->query($sql) === TRUE) {
@@ -152,52 +153,94 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <br>
           <br>
           <div class="input-box">
-            <label>Formas de pagamento:</label>
-            <br>
-            <select id="pagamento" name="pagamento" required>
-              <option value="">Selecione</option>
-              <option value="Pix">Pix</option>
-              <option value="Dinheiro físico" <?php if ($formaPagamento === 'Dinheiro físico') echo 'selected'; ?>>Dinheiro físico</option>
-            </select>
-          </div>
-          <div id="opcoes-pix" class="input-pagamento" style="display: none;">
-            <br>
-            <label>Chave pix Hotel Urbano/CNPJ:</label>
-            <br>
-            <input type="text" id="chave-pix" name="chave-pix" value="12.345.678/0001-00" readonly>
-            <br>
-            <label>Razão social:</label>
-            <br>
-            <input type="text" id="razao-social" name="razao-social" value="Hospedaria Urbana S/A" readonly>
-          </div>
-          <div id="opcoes-dinheiro" class="input-pagamento" style="display: none;">
-            <br>
-            <label>Local de pagamento:</label>
-            <br>
-            <select id="local-pagamento" name="local_pagamento" required>
-              <option value=""></option>
-              <option value="Recepção na data de entrada" <?php if ($formaPagamento === 'Dinheiro físico - Recepção na data de entrada') echo 'selected'; ?>>Recepção na data de entrada</option>
-              <option value="Durante a estadia" <?php if ($formaPagamento === 'Dinheiro físico - Durante a estadia') echo 'selected'; ?>>Durante a estadia</option>
-              <option value="Recepção na data de saída" <?php if ($formaPagamento === 'Dinheiro físico - Recepção na data de saída') echo 'selected'; ?>>Recepção na data de saída</option>
-            </select>
-          </div>
-          <br>
-          <div class="input-box">
-            <label for="valor_total">Valor total:</label>
-            <br>
-            <input type="number" id="valor_total" name="valor_total" value="<?php echo $valorTotal; ?>" readonly placeholder="Calculando valor...">
-          </div>
-          <br>
-        </fieldset>
         
-      </div>
-      <div class="button-box">
-            <input type="submit" name="submit" value="Atualizar reserva">
+            
+<div class="input-box">
+  <label for="forma_pagamento">Forma de Pagamento:</label>
+  <br>
+  <select id="forma_pagamento" name="forma_pagamento" required>
+    
+  <option value=""></option>
+  <option value="Pix" <?php if ($formaPagamento == 'Pix') echo 'selected'; ?>>Pix</option>
+    <option value="Dinheiro físico" <?php if ($formaPagamento == 'Dinheiro físico') echo 'selected'; ?>>Dinheiro físico</option>
+  </select>
+  <br>
+</div>
+
+<div id="opcoes-pix" style="display: <?php echo ($formaPagamento == 'Pix') ? 'block' : 'none'; ?>">
+  <br>
+  <label style="color: red; font-size: 14px;">Chave pix Hotel Urbano/CNPJ:</label>
+  <br>
+  <input type="text" id="chave-pix" name="chave-pix" value="12.345.678/0001-00" readonly>
+  <br>
+  <label style="color: red; font-size: 14px;">Razão social:</label>
+  <br>
+  <input type="text" id="razao-social" name="razao-social" value="Hospedaria Urbana S/A" readonly>
+</div>
+
+<div id="local-pagamento" name= "local-pagamento" class="input-pagamento" style="display: none;">
+  <br>
+  <label>Local de pagamento:</label>
+  <br>
+  <select id="local-pagamento-select" name="local-pagamento">
+    <option value=""></option>
+    <option value="Recepção na data de entrada" <?php if ($formaPagamento === 'Dinheiro físico - Recepção na data de entrada') echo 'selected'; ?>>Recepção na data de entrada</option>
+    <option value="Durante a estadia" <?php if ($formaPagamento === 'Dinheiro físico - Durante a estadia') echo 'selected'; ?>>Durante a estadia</option>
+    <option value="Recepção na data de saída" <?php if ($formaPagamento === 'Dinheiro físico - Recepção na data de saída') echo 'selected'; ?>>Recepção na data de saída</option>
+  </select>
+</div>
+
+<br>
+
+<div class="input-box">
+  <label for="valor_total">Valor total:</label>
+  <br>
+  <input type="number" id="valor_total" name="valor_total" value="<?php echo $valorTotal; ?>" readonly placeholder="Calculando valor...">
+</div>
+<br>
+
+
           </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="button-box"> <input type="submit" name="submit" value="Atualizar reserva"> </div>
     </form>
-  </div>
-  <script src="http://localhost/hotelurbano/reservas/script.js"></script>
-  <script>
+    <script>
+  const formaPagamento = document.getElementById('forma_pagamento');
+  const opcoesPix = document.getElementById('opcoes-pix');
+  const opcoesDinheiro = document.getElementById('local-pagamento');
+  const localPagamentoSelect = document.getElementById('local-pagamento-select');
+
+  function mostrarOpcoesPagamento() {
+    if (formaPagamento.value === 'Pix') {
+      opcoesPix.style.display = 'block';
+      opcoesDinheiro.style.display = 'none';
+    } else if (formaPagamento.value === 'Dinheiro físico') {
+      opcoesPix.style.display = 'none';
+      opcoesDinheiro.style.display = 'block';
+    } else {
+      opcoesPix.style.display = 'none';
+      opcoesDinheiro.style.display = 'none';
+    }
+  }
+
+  function atualizarLocalPagamento() {
+    if (formaPagamento.value === 'Dinheiro físico') {
+      localPagamentoSelect.style.display = 'block';
+    } else {
+      localPagamentoSelect.style.display = 'none';
+    }
+  }
+
+  formaPagamento.addEventListener('change', () => {
+    mostrarOpcoesPagamento();
+    atualizarLocalPagamento();
+  });
+
+  mostrarOpcoesPagamento();
+  atualizarLocalPagamento();
+
   const regimeAlimentacao = document.getElementById('regime_alimentacao');
   const dataEntrada = document.getElementById('data_entrada');
   const dataSaida = document.getElementById('data_saida');
@@ -231,32 +274,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   calcularValorTotal();
 </script>
 
-<script>
-  const pagamento = document.getElementById('pagamento');
-  const opcoesPix = document.getElementById('opcoes-pix');
-  const opcoesDinheiro = document.getElementById('opcoes-dinheiro');
-
-  pagamento.addEventListener('change', mostrarOpcoesPagamento);
-
-  function mostrarOpcoesPagamento() {
-    if (pagamento.value === 'Pix') {
-      opcoesPix.style.display = 'block';
-      opcoesDinheiro.style.display = 'none';
-    } else if (pagamento.value === 'Dinheiro físico') {
-      opcoesDinheiro.style.display = 'block';
-      opcoesPix.style.display = 'none';
-    } else {
-      opcoesPix.style.display = 'none';
-      opcoesDinheiro.style.display = 'none';
-    }
-  }
-</script>
-
-
-
-
-
-
-</body>
-
-</html>

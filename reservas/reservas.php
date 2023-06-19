@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+                        <br>
                             <div class="oferta-3">
 
                                 <p>Standard Pensão Completa</p>
@@ -221,6 +221,7 @@
                 </div>
             </div>
         </div>
+        <br>
         <div class="oferta-3">
 
             <p>Apartamento Quintal Pensão Completa</p>
@@ -317,6 +318,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                     </div>
                 </div>
             </div>
+          <br>
             <div class="oferta-3">
 
                 <p>Apartamento Quintal Piscina Pensão completa</p>
@@ -414,6 +416,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                 </div>
             </div>
         </div>
+      <br>
         <div class="oferta-3">
 
             <p>Apartamento Quintal Família Pensão Completa</p>
@@ -513,6 +516,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                     </div>
                 </div>
             </div>
+            <br>
             <div class="oferta-3">
 
                 <p>Bangalô Luxo Pensão completa</p>
@@ -609,6 +613,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
                     </div>
                 </div>
             </div>
+          <br>
             <div class="oferta-3">
 
                 <p>Bangalô Super Luxo Pensão completa</p>

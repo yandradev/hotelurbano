@@ -133,7 +133,7 @@
 <input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
 </div>
 <?php endif; ?>
-     
+     <br>
 <div class="oferta-2">
 
                                     <p>Standard Meia Pensão</p>
@@ -165,7 +165,8 @@
 <?php endif; ?>                             
 </div>                   
 </div>
-                            <div class="oferta-3">
+                <br>
+<div class="oferta-3">
 
                                 <p>Standard Pensão Completa</p>
                                 <ul>
@@ -280,7 +281,8 @@
 <input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
 </div>
 <?php endif; ?>
-            <div class="oferta-2">
+          <br>
+<div class="oferta-2">
 
                 <p> Apartamento Quintal Meia Pensão</p>
                 <ul>
@@ -311,6 +313,7 @@
 <?php endif; ?>
             </div>
         </div>
+      <br>
         <div class="oferta-3">
 
             <p>Apartamento Quintal Pensão Completa</p>
@@ -422,7 +425,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
 <input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
 </div>
 <?php endif; ?>
-
+<br>
                 <div class="oferta-2">
 
                     <p> Apartamento Quintal Piscina Meia Pensão</p>
@@ -454,6 +457,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
 <?php endif; ?>
                 </div>
             </div>
+            <br>
             <div class="oferta-3">
 
                 <p>Apartamento Quintal Piscina Pensão completa</p>
@@ -567,7 +571,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
 <input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
 </div>
 <?php endif; ?>
-
+<br>
             <div class="oferta-2">
 
                 <p> Apartamento Quintal Família Meia Pensão</p>
@@ -599,6 +603,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
 <?php endif; ?>
             </div>
         </div>
+       <br>
         <div class="oferta-3">
 
             <p>Apartamento Quintal Família Pensão Completa</p>
@@ -715,7 +720,8 @@ echo "<p>Nenhum quarto encontrado.</p>";
 <input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
 </div>
 <?php endif; ?>
-                <div class="oferta-2">
+            <br>
+<div class="oferta-2">
 
                     <p> Bangalô Luxo Meia Pensão</p>
                     <ul>
@@ -745,6 +751,7 @@ echo "<p>Nenhum quarto encontrado.</p>";
 <?php endif; ?>
                 </div>
             </div>
+         <br>
             <div class="oferta-3">
 
                 <p>Bangalô Luxo Pensão completa</p>
@@ -857,6 +864,9 @@ echo "<p>Nenhum quarto encontrado.</p>";
 <input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
 </div>
 <?php endif; ?>
+
+
+<br>
 <div class="oferta-2">
 
                     <p> Bangalô Super Luxo Meia Pensão</p>
@@ -886,8 +896,10 @@ echo "<p>Nenhum quarto encontrado.</p>";
 <input type="button" value="Limite atingido" onclick="alert('Limite de reservas atingido para este quarto. Por favor, escolha outra acomodação.')">
 </div>
 <?php endif; ?>          
-                </div>
+          
+</div>
             </div>
+            <br>  
             <div class="oferta-3">
 
                 <p>Bangalô Super Luxo Pensão completa</p>

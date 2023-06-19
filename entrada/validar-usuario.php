@@ -5,7 +5,7 @@ require_once 'conexao.php';
 
 if (empty($_POST['email-logado']) || empty($_POST['password'])) {
     $_SESSION['loginErro'] = "Por favor, preencha todos os campos.";
-    header("Location: login.php");
+    header("Location:  http://localhost/hotelurbano/entrada/login.php");
     exit();
 }
 
