@@ -33,7 +33,9 @@
              <br>
              <input type="text" name="val_completa"" class="input-1" placeholder="Valor Pensão Completa:">
              <br>
-                <button type="submit" class="button-cadastro" >Cadastrar</button>
+             <input type="text" name="limite_reservas" class="input-1" placeholder="Limite de reservas">
+             
+                <button type="submit" class="button-cadastro" style="margin-left: 13%;">Cadastrar</button>
             </form>
     </fieldset>
     <div class="options">
@@ -50,29 +52,34 @@
         </div>
     </div>
   <div class="title">
-    <h2> Cadastrar Administrador </h2>
+    <h2> Reservas </h2>
   </div>
         <br>
         <div class="container-1">
             <fieldset class="fieldset-adm" style="  padding: 25px 25px 16px;">
-            <form method="POST" action="create-admin.php">
-                <input type="text" name="email" placeholder="Email:" class="input-1">
-                <br>
-             <div class="input-box">
-                <input type="password" id="senha" name="senha" class="input-1" placeholder="Senha:" maxlength="8">
-                <button type="submit" class="button-cadastro">Cadastrar</button>
+      <span>Em caso de solicitação direta do cliente.</span>
+             
+      <form method="POST" action="create-reserva.php">
+             <br>
+<div class="img-form">
+
+    <img src="http://localhost/hotelurbano/crud/img/Hotel%20Urbano.png">
+</div>
+                
            
+          <a href="http://localhost/hotelurbano/crud/receber-id.php"> <button type="button" class="button-cadastro">Cadastrar reserva</button></a>  
+             
             </form>
             <br>
     </fieldset>
     <div class="listar">
-        <a href="http://localhost/hotelurbano/crud/read-admin.php"><button class="green-2">Listar administradores</button></a>
+        <a href="http://localhost/hotelurbano/crud/read-reservas.php"><button class="green-2">Listar reservas</button></a>
     </div>
     <div class="atualizar">
-        <a href="http://localhost/hotelurbano/crud/atualizar-admin.php"><button class="orange-2">Atualizar administradores</button></a>
+        <a href="atualizar-reservas.php"><button class="orange-2">Atualizar reservas</button></a>
     </div>
     <div class="delete">
-        <a href="http://localhost/hotelurbano/crud/deletar-admin.php"><button class="blue-2">Deletar administrador</button></a>
+        <a href="deletar-reservas.php"><button class="blue-2">Deletar reservas</button></a>
     </div>
 
 
@@ -93,9 +100,63 @@
       <div class="listar-clientes">
             <a href="read-cliente.php"><button class="blue-3" > Listar clientes</button></a>
         </div>
-      
+      <br>
+
+
+<div class="container-3">
+  <div class="title-4">
+    <h2 style="margin-top: -9%; font-size: 26px; width: 20rem; position: absolute; left: 62%;" > Cadastrar Administrador </h2>
+  </div>
+  <fieldset class="fieldset-adm-1" style=" width: 5%; padding: 30px 29px 5px;" >
+<form action="create-admin.php" method="POST">
+    <input type="text" name="email" class="input-1" placeholder="Email:" style="width: 16rem;">
+    <br>
+      <input type="password" name="senha" class="input-1" placeholder=" Senha: "  style="width: 16rem;">
+<br>
+<button type="submit" class="button-cadastro" style="margin-left: 7.6%;">Cadastrar</button></a>  
+</form>
+</fieldset>
+<div class="listar-administrador">
+<a href="read-admin.php"><button class="green-4" > Listar administradores </button></a>
+</div>
+<div class="atualizar-administrador">
+<a href="atualizar-admin.php"><button class="orange-4" > Atualizar cliente </button></a>
+</div>
+<div class="deletar-administrador">
+<a href="deletar-admin.php"><button class="blue-4" > Deletar administrador</button></a>
+</div>
+
     
       <script src="script.js"></script>
+  
+
+<script>
+
+
+    
+function mostrarOpcoesPagamento()  {
+  var selectPagamento = document.getElementById("pagamento");
+  var divOpcoesPix = document.getElementById("opcoes-pix");
+  var selectPagamento = document.getElementById("pagamento");
+  var divOpcoesDinheiro = document.getElementById("opcoes-dinheiro");
+
+  if (selectPagamento.value === "Pix") { 
+    divOpcoesPix.style.display = "block";
+  
+   
+  } else {
+    divOpcoesPix.style.display = "none"; 
+  }
+  
+    if (selectPagamento.value === "Dinheiro físico") { 
+      divOpcoesDinheiro.style.display = "block";
+    } else {
+      divOpcoesDinheiro.style.display = "none";
+    }
+  }
+</script>
+
+  
     </div>
 
     </body>

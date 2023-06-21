@@ -11,7 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $valor_cafe = isset($_POST["val_cafe"]) ? $_POST["val_cafe"] : '';
     $valor_meia = isset($_POST["val_meia"]) ? $_POST["val_meia"] : '';
     $valor_completa = isset($_POST["val_completa"]) ? $_POST["val_completa"] : '';
-
+    $limite = isset($_POST["limite_reservas"]) ? $_POST["limite_reservas"] : '';
+    
     $sql = "UPDATE quartos SET ";
 
     $update_fields = array();
@@ -36,6 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (!empty($valor_completa)) {
         $update_fields[] = "valor_completa = ' $valor_completa'";
+    }
+    if (!empty($limite)) {
+        $update_fields[] = "limite_reservas = ' $limite'";
     }
 
     $sql .= implode(", ", $update_fields);

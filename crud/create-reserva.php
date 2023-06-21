@@ -8,73 +8,64 @@
   <title>Reserva</title>
 </head>
 <body>
-  <?php
-  require_once 'conexao.php';
+<?php
+require_once 'conexao.php';
 
-  session_start();
-  if (isset($_COOKIE['id_cliente'])) {
-    $id_cliente = $_COOKIE['id_cliente'];
-  } else {
-    header("Location: http://localhost/hotelurbano/entrada/login.php");
-    exit;
-  }
-
-  if (isset($_GET['id_quarto'])) {
-    $id_quarto = $_GET['id_quarto'];
-  }
-
-  if (isset($_GET['valor'])) {
-    $valor = $_GET['valor'];
-  }
+$id_quarto = null; 
 
 
-$sql = "SELECT data_entrada, data_saida FROM reservas WHERE id_quarto = $id_quarto";
-$result = $conn->query($sql);
-
-$reservas_existentes = array();
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    $reservas_existentes[] = $row;
-  }
+if (isset($_GET['id_cliente'])) {
+  
+ 
+$id_cliente = $_GET['id_cliente'];
 }
 
-  ?>
+$valorCafe = 0;
+$valorMeiaPensao = 0;
+$valorPensaoCompleta = 0;
 
+
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_quarto'])) {
+  $id_quarto = $_GET['id_quarto'];
+
+$sql = "SELECT * FROM quartos WHERE id_quarto =  $id_quarto";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+  
+ 
+$row = $result->fetch_assoc();
+
+
+?>
   <section></section>
   <div class="box"></div>
   <img src="http://localhost/hotelurbano/reservas/img-reservas/pessoa.jpg">
   <br>
 
   <div class="container">
-    <form action="cadastro-reserva.php" method="POST" id="reserva-form" name="reserva-form">
+    <form action="cadastrar-reserva.php" method="POST" id="reserva-form" name="reserva-form">
       <div class="container">
         <fieldset>
-          <input type="hidden" name="id_quarto" value="<?php echo $id_quarto; ?>">
-          <input type="hidden" name="id_cliente" value="<?php echo $id_cliente; ?>">
           <div class="input-box-1">
  
-          <label>Agendamento de reserva:</label>
+          <label>Agendamento de reserva :</label>
           
-          <?php
-            $sql = "SELECT * FROM quartos WHERE id_quarto =  $id_quarto";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-                $valor_cafe = $row['valor_cafe'];
-                $valor_meia = $row['valor_meia'];
-                $valor_completa = $row['valor_completa'];
-
-                $valor = isset($_GET['valor']) ? $_GET['valor'] : '0';
-
-                $regimeAlimentar = array(
-                  $valor_cafe => 'Café da Manhã',
-                  $valor_meia => 'Meia Pensão',
-                  $valor_completa => 'Pensão Completa'
-                );
-
-                $regime_alimentar = isset($regimeAlimentar[$valor]) ? $regimeAlimentar[$valor] : 'Regime não especificado';
-                ?>
+        
+          </div>
+          <br>
+         
+         
+          <div class="input-box-quarto">
+            <label> ID quarto:</label>
+            <br>
+            <input type="text" name="id_quarto" value="<?php echo $id_quarto ?>" readonly>
+          </div>
+         <br>
+         <div class="input-box-quarto">
+            <label> ID cliente:</label>
+            <br>
+            <input type="text" name="id_cliente" value="<?php echo $id_cliente ?>" readonly>
           </div>
           <br>
           <div class="input-box-quarto">
@@ -83,11 +74,34 @@ if ($result->num_rows > 0) {
             <input type="text" value="<?php echo $row["tipo_quarto"]; ?>" readonly>
           </div>
           <br>
-          <div class="input-box-quarto">
-            <label>Regime alimentar escolhido:</label>
-            <br>
-            <input type="text" name="regime_alimentar" value="<?php echo $regime_alimentar; ?>" readonly>
-          </div>
+         
+          <div class="input-box">
+  <label>Regime alimentar:</label>
+  <br>
+  <select id="alimentacao" name="alimentacao" required onchange="calcularValorTotal()">
+    <option value=""></option>
+    <?php
+    require_once 'conexao.php';
+
+    $id_quarto = $_GET['id_quarto'];
+
+    $query = "SELECT valor_cafe, valor_meia, valor_completa FROM quartos WHERE id_quarto = $id_quarto";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+
+    $valorCafe = $row['valor_cafe'];
+    $valorMeia = $row['valor_meia'];
+    $valorCompleta = $row['valor_completa'];
+
+    echo "<option value=\"$valorCafe\">Café da Manhã - R$ $valorCafe</option>";
+    echo "<option value=\"$valorMeia\">Meia Pensão - R$ $valorMeia</option>";
+    echo "<option value=\"$valorCompleta\">Pensão Completa - R$ $valorCompleta</option>";
+    ?>
+  </select>
+</div>
+
+
+      
           <br>
           <div class="input-box">
             <label>Data de entrada:</label>
@@ -159,14 +173,15 @@ if ($result->num_rows > 0) {
           <br>
           <label>Número de noites selecionadas:</label>
           <br>
-          <input type="text" id="num-noites" readonly placeholder="Em andamento">
+          <input type="text" id="num-noites" readonly placeholder="Em andamento" >
           <br>
           <br>
           <div class="input-box">
-            <label>Valor total:</label>
-            <br>
-            <input type="text" id="valor-total" name="valor_total" value="<?php echo isset($_GET['valor']) ? $_GET['valor'] : ''; ?>" readonly placeholder="Calculando valor">
-          </div>
+  <label for="valor_total">Valor total:</label>
+  <br>
+  <input type="number" id="valor_total" name="valor_total" readonly placeholder="Calculando valor...">
+</div>
+<br>
         </fieldset>
       </div>
       <div class="button-box">
@@ -229,29 +244,27 @@ if ($result->num_rows > 0) {
 
     document.getElementById("quarto").addEventListener("change", atualizarOpcoesOcupantes);
 
+    
 function calcularValorTotal() {
-  var checkIn = document.getElementById('check-in').value;
-  var checkOut = document.getElementById('check-out').value;
-  var valorDiaria = parseFloat("<?php echo $valor; ?>");
-  var numNoites = calcularDiferencaDias(checkIn, checkOut);
-  var valorTotal = valorDiaria * numNoites;
+
+  var valorRegimeAlimentar = document.getElementById('alimentacao').value;
   
-  document.getElementById('valor-total').value = "Calculando valor";
-  document.getElementById('num-noites').value = numNoites + " noite(s)";
-  setTimeout(function() {
-    document.getElementById('valor-total').value = valorTotal.toFixed(2);
-  }, 1000);
-}
+  
+  var dataEntrada = new Date(document.getElementById('check-in').value);
+  var dataSaida = new Date(document.getElementById('check-out').value);
+  
 
-function calcularDiferencaDias(data1, data2) {
-  var date1 = new Date(data1);
-  var date2 = new Date(data2);
-  var diffTime = Math.abs(date2 - date1);
+  var diffTime = Math.abs(dataSaida - dataEntrada);
   var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  return diffDays;
+
+  var valorTotal = valorRegimeAlimentar * diffDays;
+  
+  
+  document.getElementById('valor_total').value = valorTotal;
+  document.getElementById('num-noites').value = diffDays + " noite(s)";
 }
 
-document.getElementById('quarto').addEventListener('change', atualizarOpcoesOcupantes);
+document.getElementById('alimentacao').addEventListener('change', calcularValorTotal);
 document.getElementById('check-in').addEventListener('change', calcularValorTotal);
 document.getElementById('check-out').addEventListener('change', calcularValorTotal);
 
@@ -259,7 +272,6 @@ document.getElementById('check-out').addEventListener('change', calcularValorTot
   </script>
 </body>
 </html>
-
 
 
 

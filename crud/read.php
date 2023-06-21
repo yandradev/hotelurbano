@@ -94,6 +94,7 @@ table {
 			<th>Valor Café da Manhã</th>
 			<th>Valor Meia Pensão</th>
 			<th>Valor Pensão Completa</th>
+			<th>Limites de Reservas</th>
 
 		</tr>
 		<?php
@@ -121,6 +122,9 @@ table {
 				</td>
 				<td>
 					<?php echo $dados["valor_completa"] ?? ''; ?>
+				</td>
+				<td>
+					<?php echo $dados["limite_reservas"] ?? ''; ?>
 				</td>
 
 			</tr>

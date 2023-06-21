@@ -21,7 +21,7 @@
                     </div>
                     <div class="button">
                         <h2>Não tem uma conta?</h2>
-                        <button type="submit"><a href="cadastro.php">Criar conta</a></button>
+                        <button type="submit"><a href="http://localhost/hotelurbano/entrada/cadastro.php">Criar conta</a></button>
                     </div>
                 </div>
 

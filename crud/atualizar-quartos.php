@@ -36,6 +36,7 @@
         <br>
         <input type="text" name="val_completa" placeholder="Valor Pensão Completa:">
         <br>
+        <input type="text" name="limite_reservas" placeholder="Limite reservas:">
     </fieldset>
         <div class="listar">
             <button type="submit">Atualizar</button>

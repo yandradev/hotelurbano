@@ -12,7 +12,7 @@ if (isset($_COOKIE['id_cliente'])) {
 if (isset($_POST['id_reserva'])) {
     $id_reserva = $_POST['id_reserva'];
 
-    $sql_reserva = "SELECT data_entrada, data_saida, valor_total, forma_de_pagamento FROM reservas WHERE id_cliente = $id_cliente AND id_reserva = $id_reserva";
+    $sql_reserva = "SELECT data_entrada, data_saida, valor_total, forma_de_pagamento, regime_alimentacao FROM reservas WHERE id_cliente = $id_cliente AND id_reserva = $id_reserva";
     $resultado_reserva = mysqli_query($conn, $sql_reserva);
     $dados_reserva = mysqli_fetch_assoc($resultado_reserva);
 
@@ -20,6 +20,7 @@ if (isset($_POST['id_reserva'])) {
         $data_entrada = $dados_reserva['data_entrada'];
         $data_saida = $dados_reserva['data_saida'];
         $valor_total = $dados_reserva['valor_total'];
+        $regime = $dados_reserva['regime_alimentacao'];
         $forma_de_pagamento = $dados_reserva['forma_de_pagamento'];
     } else {
         echo "Reserva não encontrada.";
@@ -135,6 +136,7 @@ if ($resultado_cliente && $resultado_cliente->num_rows > 0) {
                 <p><strong>Data de Entrada:</strong> <?php echo $data_entrada; ?></p>
                 <p><strong>Data de Saída:</strong> <?php echo $data_saida; ?></p>
                 <p><strong>Valor Total:</strong> R$ <?php echo $valor_total; ?></p>
+                <p><strong>Regime Alimentar:</strong> <?php echo $regime; ?></p>
                 <p><strong>Forma de Pagamento:</strong> <?php echo $forma_de_pagamento; ?></p>
             </div>
         </div>
