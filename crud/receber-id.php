@@ -62,16 +62,15 @@
   select {
     display: block;
     margin: auto;
-    margin-top: 4%;
-    width: 20%;
-    padding: 10px 2px 2px;
+    margin-top: 1%;
+    width: 15%;
+    padding: 10px 10px 2px;
     border-radius: 15px;
   }
 
   button {
     background: linear-gradient(90deg, rgb(238, 85, 69) 0%, rgb(29, 74, 220) 47%, rgb(11, 189, 150) 94%);
     border-style: none;
-
     padding: 6px 35px 8px;
     color: white;
     font-family: 'Oswald', sans-serif;
@@ -85,6 +84,19 @@
     display: flex;
     justify-content: center;
   }
+
+  .box-1 , .box-2 {
+   display:block;
+   margin:0;
+  }
+
+.box-1 label {
+  margin-top: 2%;
+}
+
+.box-2 label {
+  margin-top: 3%;
+}
 
 </style>
 
@@ -123,28 +135,32 @@
   </div>
 
   <form action="http://localhost/hotelurbano/crud/create-reserva.php" method="GET">
-    <label for="cliente">ID do cliente:</label>
-    <select name="id_cliente" id="cliente" required>
-      <option value=""></option>
-      <?php foreach ($clientes as $cliente): ?>
+    <div class="box-1">
+      <label for="cliente">ID do cliente:</label>
+    
+      <select name="id_cliente" id="cliente" required>
+        <option value=""></option>
+        <?php foreach ($clientes as $cliente): ?>
         <option value="<?php echo $cliente['id_cliente']; ?>">
-          Cliente <?php echo $cliente['id_cliente']; ?>
+          Cliente
+          <?php echo $cliente['id_cliente']; ?>
         </option>
-      <?php endforeach; ?>
-    </select>
+        <?php endforeach; ?>
+      </select>
+    </div>
 
-    <br>
-
-    <label for="quarto">ID do quarto:</label>
-    <select name="id_quarto" id="quarto" required>
-      <option value=""></option>
-      <?php foreach ($quartos as $quarto): ?>
+    <div class="box-2">
+      <label for="quarto">ID do quarto:</label>
+      <select name="id_quarto" id="quarto" required>
+        <option value=""></option>
+        <?php foreach ($quartos as $quarto): ?>
         <option value="<?php echo $quarto['id_quarto']; ?>">
-          Quarto <?php echo $quarto['id_quarto']; ?>
+          Quarto
+          <?php echo $quarto['id_quarto']; ?>
         </option>
-      <?php endforeach; ?>
-    </select>
-
+        <?php endforeach; ?>
+      </select>
+    </div>
     <div class="atualizar">
       <button type="submit">Atualizar</button>
     </div>

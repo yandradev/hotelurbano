@@ -93,6 +93,14 @@
             padding: 3px 0px 0px;
         }
 
+        .icon-eye {
+    position: fixed;
+    margin-top: -3rem;
+    margin-left: 15rem;
+    cursor: pointer;
+     
+}
+
     </style>
 </head>
 <body>
@@ -142,16 +150,49 @@
                         ?>
                         </select>
                         <br>
-                    
+                    <div class="senha">
                         <label for="senha">Senha de usuário:</label>
                         <input type="password" name="senha" id="senha" maxlength="8" required>
                         <br>
+                        <div class="icon-eye">
+                            <img src="http://localhost/hotelurbano/entrada/profile/img/eye.png" id="eye" style="width: 20px;">
+                        </div>
+                    </div>
                     </fieldset>
                     <br>
                     <div class="deletar">
                         <button type="submit">Deletar reserva</button>
                     </div>
                 </form>
+           
+           <script>
+let btn = document.querySelector('#eye');
+
+
+btn.addEventListener('click', () => {
+  let inputSenha = document.querySelector('#senha')
+
+  if (inputSenha.getAttribute('type') == 'password') {
+    inputSenha.setAttribute('type', 'text')
+    btn.setAttribute("src", "http://localhost/hotelurbano/entrada/profile/img/hide.png")
+
+  } else {
+    inputSenha.setAttribute('type', 'password')
+    btn.setAttribute("src", "http://localhost/hotelurbano/entrada/profile/img/eye.png")
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+           </script>
             </div>
             <?php
         }

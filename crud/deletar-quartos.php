@@ -19,7 +19,7 @@
         <fieldset>
             <form method="POST" action="delete.php">
 
-                <input type="text" name="id" placeholder="ID do Quarto:">
+                <input type="text" name="id" placeholder="ID do Quarto:" required>
 
                 <br>
                 

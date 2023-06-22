@@ -23,10 +23,7 @@
         <input type="checkbox" id="budget-2000-3500" value="2000-3500" class="budget">
         <label class="checkbox" for="budget-2000-3500">R$ 2.000,00 - R$ 3.500,00</label>
         <br>
-        <input type="checkbox" id="budget-2000-3500" value="3500-5000" class="budget">
-        <label class="checkbox" for="budget-2000-3500">R$ 3.500,00 - R$ 5.000,00</label>
-        <br><br>
-
+<br>
 
         <label class="label-2">Cancelamento:</label>
         <br>

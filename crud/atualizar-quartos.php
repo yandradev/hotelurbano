@@ -16,7 +16,7 @@
   </div>
     <div class="container">
         <fieldset class="fieldset">
-    <form method="POST" action="update.php">
+    <form method="POST" action="update.php" enctype="multipart/form-data">
      
         <input type="text" name="id" placeholder="ID do quarto:">
         <br>
@@ -37,6 +37,10 @@
         <input type="text" name="val_completa" placeholder="Valor Pensão Completa:">
         <br>
         <input type="text" name="limite_reservas" placeholder="Limite reservas:">
+  
+  <br>
+  <input type="file" name="imagem" style="width: 100%; padding: 10px 5px 10px" class="custom-file-input">
+                
     </fieldset>
         <div class="listar">
             <button type="submit">Atualizar</button>

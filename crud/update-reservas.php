@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <br>
           <label>Número de ocupantes:</label>
           <br>
-          <select id="num_ocupantes" name="num_ocupantes" onchange="atualizarOpcoesOcupantes()" required>
+          <select id="num_ocupantes" name="num_ocupantes" required>
             <option value=""></option>
             <?php
             $id_quarto = $row['id_quarto'];

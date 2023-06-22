@@ -14,7 +14,7 @@
             <img src="./profile/img/logourbano.png" class="logo">
         </div>
         <div class="form">
-            <form action="validar-usuario.php" method="POST" name="login">
+            <form action="validar-usuario.php" method="POST" name="login" autocomplete="off">
                 <div class="form-head">
                     <div class="titulo">
                         <h1>Login</h1>
@@ -35,7 +35,7 @@
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password-logado" name="password" placeholder="Digite uma senha" maxlength="8">
+                        <input id="password" type="password" name="password" placeholder="Digite uma senha" maxlength="8">
                         <small></small>
                         <div class="icon-eye">
                             <img src="profile/img/eye.png" width="20px" id="eye">
@@ -43,9 +43,13 @@
                     </div>
                 </div>
                 <div class="continue-button">
-                    <a href="#"><input type="submit" value="Login" id="submit"></a>
-                </div>
-                <script type="text/javascript" src="dynamic/loginScript.js" ></script>
+                <input type="submit" value="Login" id="submit" onclick=" return Validar()">
+
+   
+    </div>
+<br>
+<center>
+
             </form>
         </div>
         </div>

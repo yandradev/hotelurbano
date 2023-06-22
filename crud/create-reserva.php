@@ -119,7 +119,7 @@ $row = $result->fetch_assoc();
   <label>Número de ocupantes:</label>
   <br>
   <select id="quarto" name="ocupantes" onchange="atualizarOpcoesOcupantes()" required>
-    <option value=""></option>
+    <option value="">Selecione</option>
     <?php
     require_once 'conexao.php';
 
@@ -269,9 +269,51 @@ document.getElementById('check-in').addEventListener('change', calcularValorTota
 document.getElementById('check-out').addEventListener('change', calcularValorTotal);
 
 
+function validarReserva(event) {
+  event.preventDefault();
+
+  var alimentacao = document.forms['reserva-form']['alimentacao'].value;
+  var checkIn = document.forms['reserva-form']['check-in'].value;
+  var checkOut = document.forms['reserva-form']['check-out'].value;
+  var ocupantes = document.forms['reserva-form']['ocupantes'].value;
+  var pagamento = document.forms['reserva-form']['pagamento'].value;
+
+  if (alimentacao === '' || checkIn === '' || checkOut === '' || ocupantes === '' || pagamento === '') {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+  }
+
+
+  var dataAtual = new Date();
+  var dataCheckIn = new Date(checkIn);
+
+  if (dataCheckIn < dataAtual) {
+    alert('A data de check-in não pode ser uma data passada.');
+    return;
+  }
+
+
+  var dataCheckOut = new Date(checkOut);
+
+  if (dataCheckOut < dataAtual) {
+    alert('A data de check-out não pode ser uma data passada.');
+    return;
+  }
+
+  
+  if (dataCheckOut <= dataCheckIn) {
+    alert('A data de check-out deve ser posterior à data de check-in.');
+    return;
+  }
+
+ 
+  document.forms['reserva-form'].submit();
+}
+
+document.getElementById('reserva-form').addEventListener('submit', validarReserva);
+
   </script>
 </body>
 </html>
-
 
 

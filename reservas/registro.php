@@ -105,7 +105,7 @@ if ($result->num_rows > 0) {
   <label>Número de ocupantes:</label>
   <br>
   <select id="quarto" name="ocupantes" onchange="atualizarOpcoesOcupantes()" required>
-    <option value=""></option>
+    <option value=""> Selecione</option>
     <?php
     require_once 'conexao.php';
 
@@ -254,6 +254,43 @@ function calcularDiferencaDias(data1, data2) {
 document.getElementById('quarto').addEventListener('change', atualizarOpcoesOcupantes);
 document.getElementById('check-in').addEventListener('change', calcularValorTotal);
 document.getElementById('check-out').addEventListener('change', calcularValorTotal);
+
+function validarReserva(event) {
+  event.preventDefault(); // Impede o envio do formulário se houver campos inválidos
+
+  var checkIn = document.getElementById('check-in').value;
+  var checkOut = document.getElementById('check-out').value;
+  var ocupantes = document.getElementById('quarto').value;
+  var pagamento = document.getElementById('pagamento').value;
+
+ 
+  if (checkIn === '' || checkOut === '' || ocupantes === '' || pagamento === '') {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+  }
+
+
+  if (checkIn >= checkOut) {
+    alert('A data de check-in deve ser anterior à data de check-out.');
+    return;
+  }
+
+ 
+  var dataAtual = new Date();
+  dataAtual.setHours(0, 0, 0, 0); 
+
+
+  var dataCheckIn = new Date(checkIn);
+  var dataCheckOut = new Date(checkOut);
+
+ 
+  if (dataCheckIn < dataAtual || dataCheckOut < dataAtual) {
+    alert('Por favor, selecione datas futuras para check-in e check-out.');
+    return;
+  }
+
+  document.getElementById('reserva-form').submit();
+}
 
 
   </script>

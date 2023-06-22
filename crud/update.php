@@ -2,7 +2,6 @@
 
 require_once 'conexao.php';
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_quarto = $_POST["id"];
     $ocupacao_maxima = isset($_POST["ocup"]) ? $_POST["ocup"] : '';
@@ -12,8 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $valor_meia = isset($_POST["val_meia"]) ? $_POST["val_meia"] : '';
     $valor_completa = isset($_POST["val_completa"]) ? $_POST["val_completa"] : '';
     $limite = isset($_POST["limite_reservas"]) ? $_POST["limite_reservas"] : '';
-    
-    $sql = "UPDATE quartos SET ";
 
     $update_fields = array();
 
@@ -33,27 +30,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $update_fields[] = "valor_cafe = '$valor_cafe'";
     }
     if (!empty($valor_meia)) {
-        $update_fields[] = "valor_meia = ' $valor_meia'";
+        $update_fields[] = "valor_meia = '$valor_meia'";
     }
     if (!empty($valor_completa)) {
-        $update_fields[] = "valor_completa = ' $valor_completa'";
+        $update_fields[] = "valor_completa = '$valor_completa'";
     }
     if (!empty($limite)) {
-        $update_fields[] = "limite_reservas = ' $limite'";
+        $update_fields[] = "limite_reservas = '$limite'";
     }
 
-    $sql .= implode(", ", $update_fields);
 
-    $sql .= " WHERE id_quarto = $id_quarto";
+    if (count($update_fields) > 0) {
+        $sql = "UPDATE quartos SET ";
+        $sql .= implode(", ", $update_fields);
+        $sql .= " WHERE id_quarto = $id_quarto";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "Quarto atualizado com sucesso!";
+        if (mysqli_query($conn, $sql)) {
+            echo "<script>alert('Quarto atualizado com sucesso!'); window.location.href = 'http://localhost/hotelurbano/crud/read.php';</script>";
+            exit; 
+        } else {
+            echo "Erro ao atualizar quarto: " . mysqli_error($conn);
+        }
     } else {
-        echo "Erro ao atualizar quarto: " . mysqli_error($conn);
+        echo "Nenhum campo para atualizar foi fornecido.";
+        echo "<script>alert('Nenhum campo para atualizar foi fornecido.');</script>";
     }
 
     mysqli_close($conn);
 }
-
-
 ?>

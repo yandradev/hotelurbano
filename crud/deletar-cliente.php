@@ -19,7 +19,7 @@
         <fieldset>
             <form method="POST" action="delete-cliente.php">
 
-                <input type="text" name="id" placeholder="ID do cliente:">
+                <input type="text" name="id" placeholder="ID do cliente:" required>
 
                 <br>
             

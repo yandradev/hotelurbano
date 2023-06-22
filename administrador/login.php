@@ -32,13 +32,14 @@
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password-logado" name="password" placeholder="Digite uma senha">
+                        <input id="password" type="password" name="password" placeholder="Digite uma senha">
                         <small></small>
                         <div class="icon-eye">
                             <img src="./img/eye.png" width="20px" id="eye">
                         </div>
                     </div>
                 </div>
+
                 <div class="continue-button">
                     <input type="submit" value="Login" id="submit">
                 </div>

@@ -29,3 +29,58 @@ btnConfirm.addEventListener("click", () => {
     btnConfirm.setAttribute("src", "http://localhost/hotelurbano/entrada/profile/img/eye.png")
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+
+//message 
+function errorValidation(input, message) {
+  const FormControl = input.parentElement
+  const small = FormControl.querySelector('small')
+  small.innerText = message
+
+}
+function Validar() {
+  if (email.value == "") {
+    errorValidation(email, "Preencha o campo email.")
+    email.classList.add("errorInput")
+
+  } else if ((email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1 || (email.value.indexOf(".") - email.value.indexOf("@") == 1))) {
+    errorValidation(email, "'@' necessário e '.' após o endereço informado.")
+    email.classList.add("errorInput")
+ 
+  } else {
+    errorValidation(email, "")
+    email.classList.remove("errorInput")
+  }
+
+  if (password.value == "") {
+    errorValidation(password, "Preencha o campo senha.")
+    password.classList.add("errorInput")
+    return false;
+  } else {
+    errorValidation(password, "")
+    password.classList.remove("errorInput")
+
+  }   
+  return true;
+}
+
+
+
+

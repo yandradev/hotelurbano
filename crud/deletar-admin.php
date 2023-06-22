@@ -18,7 +18,7 @@
         <fieldset>
     <form method="POST" action="delete-admin.php">
 
-        <input type="text" name="id" placeholder="ID do Administrador: ">
+        <input type="text" name="id" placeholder="ID do Administrador: " required>
 
         <br>
     </fieldset>
@@ -27,7 +27,7 @@
       </div>
     
         <div class="read">
-        <a href="read-admin.php"><button type="button"> Listar Administrador</button></a>
+        <a href="read-admin.php"><button type="button"> Listar Administradores</button></a>
     </div>
     </form>
 </body>

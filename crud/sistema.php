@@ -10,7 +10,16 @@
 </head>
 
 <body>
+<style>
+.icon-eye {
+    margin-top: -13%;
+    margin-left: 85%;
+    cursor: pointer;
+     
+}
 
+
+</style>
     <section></section>
     <div class="img-1">
         <img src="http://localhost/hotelurbano/administrador/img/logourbano.png">
@@ -19,21 +28,23 @@
     
         <div class="container">
             <fieldset>
-            <form method="POST" action="create.php" enctype="multipart/form-data">
+            <form method="POST" action="create.php" enctype="multipart/form-data" >
 
-                <input type="text" name="ocup" class="input-1" placeholder="Ocupação máxima: ">
+                <input type="text" name="ocup" class="input-1" placeholder="Ocupação máxima: " required>
               <br>
-                <input type="text" name="desc" class="input-1" placeholder=" Descrição: ">
+                  <input type="file" name="imagem" style="width: 92%; padding: 10px 10px 12px" class="custom-file-input">
+                  <br>
+                <input type="text" name="desc" class="input-1" placeholder=" Descrição: " required>
 <br>
-                <input type="text" name="tipo" class="input-1" placeholder="Tipo do quarto:">
+                <input type="text" name="tipo" class="input-1" placeholder="Tipo do quarto:" required>
 <br>
-                <input type="text" name="val_cafe" class="input-1" placeholder="Valor Café da Manhã:">
+                <input type="text" name="val_cafe" class="input-1" placeholder="Valor Café da Manhã:" required>
              <br>
-             <input type="text" name="val_meia" class="input-1" placeholder="Valor Meia Pensão:">
+             <input type="text" name="val_meia" class="input-1" placeholder="Valor Meia Pensão:" required>
              <br>
-             <input type="text" name="val_completa"" class="input-1" placeholder="Valor Pensão Completa:">
+             <input type="text" name="val_completa"" class="input-1" placeholder="Valor Pensão Completa:" required>
              <br>
-             <input type="text" name="limite_reservas" class="input-1" placeholder="Limite de reservas">
+             <input type="text" name="limite_reservas" class="input-1" placeholder="Limite de reservas" required>
              
                 <button type="submit" class="button-cadastro" style="margin-left: 13%;">Cadastrar</button>
             </form>
@@ -50,7 +61,6 @@
                 <a href="deletar-quartos.php"><button class="blue-1"> Deletar quarto</button></a>
             </div>
         </div>
-    </div>
   <div class="title">
     <h2> Reservas </h2>
   </div>
@@ -102,17 +112,20 @@
         </div>
       <br>
 
-
+</div>
 <div class="container-3">
   <div class="title-4">
     <h2 style="margin-top: -9%; font-size: 26px; width: 20rem; position: absolute; left: 62%;" > Cadastrar Administrador </h2>
   </div>
   <fieldset class="fieldset-adm-1" style=" width: 5%; padding: 30px 29px 5px;" >
 <form action="create-admin.php" method="POST">
-    <input type="text" name="email" class="input-1" placeholder="Email:" style="width: 16rem;">
+    <input type="text" name="email" class="input-1" placeholder="Email:" style="width: 16rem;" required>
     <br>
-      <input type="password" name="senha" class="input-1" placeholder=" Senha: "  style="width: 16rem;">
-<br>
+    <div class="input-senha">
+    <input type="password" id="senha" name="senha" class="input-1" placeholder=" Senha: "  style="width: 16rem;" required>
+  
+ 
+  </div>
 <button type="submit" class="button-cadastro" style="margin-left: 7.6%;">Cadastrar</button></a>  
 </form>
 </fieldset>
@@ -120,44 +133,19 @@
 <a href="read-admin.php"><button class="green-4" > Listar administradores </button></a>
 </div>
 <div class="atualizar-administrador">
-<a href="atualizar-admin.php"><button class="orange-4" > Atualizar cliente </button></a>
+<a href="atualizar-admin.php"><button class="orange-4" > Atualizar administradores </button></a>
 </div>
 <div class="deletar-administrador">
 <a href="deletar-admin.php"><button class="blue-4" > Deletar administrador</button></a>
 </div>
-
+</div>
     
       <script src="script.js"></script>
   
 
-<script>
-
-
-    
-function mostrarOpcoesPagamento()  {
-  var selectPagamento = document.getElementById("pagamento");
-  var divOpcoesPix = document.getElementById("opcoes-pix");
-  var selectPagamento = document.getElementById("pagamento");
-  var divOpcoesDinheiro = document.getElementById("opcoes-dinheiro");
-
-  if (selectPagamento.value === "Pix") { 
-    divOpcoesPix.style.display = "block";
-  
-   
-  } else {
-    divOpcoesPix.style.display = "none"; 
-  }
-  
-    if (selectPagamento.value === "Dinheiro físico") { 
-      divOpcoesDinheiro.style.display = "block";
-    } else {
-      divOpcoesDinheiro.style.display = "none";
-    }
-  }
-</script>
 
   
-    </div>
+
 
     </body>
 

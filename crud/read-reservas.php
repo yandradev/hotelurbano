@@ -99,6 +99,8 @@ table {
             <th>Valor total</th>
 			<th>Quantidade de ocupantes</th>
             <th>Forma de pagamento efetuada</th>
+			<th>Regime de alimentação escolhido</th>
+			
 		</tr>
 		<?php
 
@@ -113,7 +115,8 @@ table {
 				<td><?php echo $dados["valor_total"]; ?></td>
                 <td><?php echo $dados["quantidade_ocupantes"] ?? ''; ?></td>
                 <td><?php echo $dados["forma_de_pagamento"]; ?></td>  
-            </tr>
+				<td><?php echo $dados["regime_alimentacao"] ?? ''; ?></td>
+			</tr>
 		<?php
 		}
 		?>

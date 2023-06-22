@@ -67,7 +67,7 @@ $resultado = mysqli_query($conn, $sql);
 		text-transform: uppercase;
 		font-family: 'DM Serif Display', serif;
 		font-weight: bold;
-		left: 36%;
+		left: 39%;
 
 	}
 
@@ -95,6 +95,8 @@ table {
 			<th>Valor Meia Pensão</th>
 			<th>Valor Pensão Completa</th>
 			<th>Limites de Reservas</th>
+			<th>Imagem principal</th>
+
 
 		</tr>
 		<?php
@@ -126,6 +128,14 @@ table {
 				<td>
 					<?php echo $dados["limite_reservas"] ?? ''; ?>
 				</td>
+				<td>
+    <?php
+    if (!empty($dados["imagem"])) {
+        $imageData = base64_encode($dados["imagem"]);
+        echo '<img src="data:image/jpeg;base64,' . $imageData . '" width="100" height="100" />';
+    }
+    ?>
+</td>
 
 			</tr>
 		<?php
